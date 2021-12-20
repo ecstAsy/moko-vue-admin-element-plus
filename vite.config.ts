@@ -21,6 +21,7 @@ export default defineConfig({
     viteMockServe({
       // default
       mockPath: "mock",
+      prodEnabled: true,
     }),
   ],
   css: {
