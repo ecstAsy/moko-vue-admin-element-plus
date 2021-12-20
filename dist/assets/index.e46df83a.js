@@ -1,0 +1,1 @@
+import{a2 as r,c as a,w as c,o,i as t}from"./vendor.b2fd24f8.js";/* empty css             */import{_ as s}from"./index.59e5c046.js";const n={},_=t(" card ");function d(f,i){const e=r;return o(),a(e,null,{default:c(()=>[_]),_:1})}var x=s(n,[["render",d]]);export{x as default};
