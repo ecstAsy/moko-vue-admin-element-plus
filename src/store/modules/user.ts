@@ -1,13 +1,14 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:30
- * @LastEditTime: 2021-12-07 13:55:13
+ * @LastEditTime: 2021-12-20 17:16:53
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
 import { RootTypes, UserTypes } from "@/store/type";
 import { setItem, removeItem } from "@/utils/localStorage";
-import { userLogin } from "@/Http";
+// import { userLogin } from "@/Http";
+import { getRandomStr } from "@/utils/util";
 
 const user: Module<UserTypes, RootTypes> = {
   state: {
@@ -28,7 +29,16 @@ const user: Module<UserTypes, RootTypes> = {
     async login({ commit }: any, payload) {
       const { account, password } = payload;
       if (account === "moko.admin" && password === "admin") {
-        const res: any = await userLogin(payload);
+        const res: any = {
+          code: 0,
+          data: {
+            name: "Moko",
+            token: getRandomStr(64),
+            roles: ["admin"],
+          },
+          message: "登录成功！",
+        };
+          // await userLogin(payload);
         if (!res.code) {
           await Promise.all([
             setItem("token", res.data.token),
