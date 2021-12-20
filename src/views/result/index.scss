@@ -1,0 +1,42 @@
+.page-result {
+  padding-top: 80px;
+
+  &-success {
+    width: 70%;
+    background: #f9f9f9;
+    margin: 50px auto;
+    padding: 20px 50px;
+    border-radius: 8px;
+
+    &:deep(.el-descriptions__body) {
+      background: transparent !important;
+      font-size: 16px;
+    }
+
+  }
+
+  &-fail {
+    width: 70%;
+    background: #f9f9f9;
+    margin: 50px auto;
+    padding: 20px 50px;
+    border-radius: 8px;
+
+    p {
+      line-height: 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      .icon {
+        width: 1.2em;
+        height: 1.2em;
+        color: #f56c6c;
+      }
+
+      span {
+        margin: 0 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+/* global-color
+-------------------------- */
+$primary-color: #7367F0 !default;
+$success-color: #67c23a !default;
+$danger-color: #f56c6c !default;
+$warning-color: #e6a23c !default;
+$primary-hover-color: #a195fc !default;
+
+/* font-color
+-------------------------- */
+$font-color-primary: #303133 !default;
+$font-color-regular:#606266 !default;
+$font-color-info:#909399 !default;
+
+// 宽高
+@mixin wh($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// 高度，行高 相等
+@mixin hl($height) {
+  height: $height;
+  line-height: $height;
+}
+
+// 字体大小，颜色
+@mixin f-s-c($size, $color) {
+  font-size: $size;
+  color: $color;
+}
+
+// 字体样式、字重
+@mixin f-w-r($family:"PingFangSC-Regular PingFang SC", $weight:400) {
+  font-family: $family;
+  font-weight: $weight;
+}
+
+// 定位上下左右居中
+@mixin center ($top:50%) {
+  position: absolute;
+  top: $top;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// 省略标记
+@mixin ellipse($line: 1) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+// flex 布局和 子元素 对其方式 
+@mixin flex-row($type: space-between, $align:center) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $type;
+  align-items: $align;
+}
+
+// flex 布局和 子元素 对其方式
+@mixin flex-column($type: space-between, $align:center) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $type;
+  align-items: $align;
+}

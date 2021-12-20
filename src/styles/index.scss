@@ -1,0 +1,57 @@
+@import "./mixin.scss";
+@import '@wangeditor/editor/dist/css/style.css';
+
+#app,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f8f8f8;
+}
+
+#nprogress {
+  .bar {
+    background: $primary-color !important; //自定义颜色
+  }
+
+  .spinner-icon {
+    border-color: $primary-color transparent transparent $primary-color;
+  }
+}
+
+.form-item {
+  &-200 {
+    width: 200px !important;
+  }
+
+  &-220 {
+    width: 220px !important;
+  }
+
+  &-340 {
+    width: 340px !important;
+  }
+}
+
+.status {
+  &-primary {
+    color: $primary-color;
+  }
+
+  &-success {
+    color: $success-color;
+  }
+
+  &-error {
+    color: $danger-color;
+  }
+
+  &-warning {
+    color: $warning-color;
+  }
+
+  &-info {
+    color: $font-color-info;
+  }
+}
