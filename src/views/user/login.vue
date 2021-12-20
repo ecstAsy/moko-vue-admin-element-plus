@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-07 13:10:20
- * @LastEditTime: 2021-12-07 13:55:34
+ * @LastEditTime: 2021-12-20 17:22:44
  * @LastEditors: ecstAsy
 -->
 
@@ -22,7 +22,7 @@
         >
         <span class="title">Moko Admin</span>
         <div class="desc">
-          Vue3 Antd Design Vuex Vite TypeScript !
+          Vue3 Element-plus Vuex Vite TypeScript !
         </div>
       </div>
       <el-form
