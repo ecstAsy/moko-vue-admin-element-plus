@@ -1,5 +1,7 @@
 <h2 align="center">Vue3 Vite Typescript</h2>
 
+- [预览地址](http://ecst.gitee.io/moko-vue-elementplus-admin)
+
 ### 项目介绍
 
 > 使用 **Vue3 Vite Typescript** 搭配 **Element-Plus** 框架，搭建项目, 实现 **按需加载**，和自定义 **theme**
