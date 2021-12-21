@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2021-12-21 11:20:08
+ * @LastEditTime: 2021-12-21 11:25:57
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
@@ -34,14 +34,14 @@ const data = () => Mock.mock({
       address: "@title(3, 5)",
       "times|1-10": 10,
       "status|+1": Array.from(STATUS, ({ value }) => value),
-      statusName():string {
-        let str = "";
-        const obj = STATUS.find((item) => item.value === this.status);
-        if (obj) {
-          str = obj.label;
-        }
-        return str;
-      },
+      // statusName():string {
+      //   let str = "";
+      //   const obj = STATUS.find((item) => item.value === this.status);
+      //   if (obj) {
+      //     str = obj.label;
+      //   }
+      //   return str;
+      // },
     },
   ],
 });
