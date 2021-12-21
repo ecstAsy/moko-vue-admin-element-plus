@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:52:53
- * @LastEditTime: 2021-12-21 11:13:36
+ * @LastEditTime: 2021-12-21 13:16:16
  * @LastEditors: ecstAsy
 -->
 
@@ -9,7 +9,7 @@
   <el-row>
     <el-table
       v-loading="loading"
-      :data="data"
+      :data="dataSource"
       style="width: 100%"
     >
       <template
@@ -48,16 +48,27 @@
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { ColumnTypes } from "./type";
 
-defineProps<{
-  data: Array<any>,
+const loading = ref<boolean>(false);
+
+const props = defineProps<{
   columns: Array<ColumnTypes>
-  loading: boolean
+  load:()=> Array<any>
 }>();
 
-const emit = defineEmits<{(e: "current-change", page: number): void
-}>();
+const dataSource = ref<Array<any>>([]);
 
-const onCurrentChange = (page: number) => emit("current-change", page);
+const getData = async () => {
+  loading.value = true;
+  const res:any = await props.load();
+  dataSource.value = res.data.list;
+  loading.value = false;
+  return true;
+};
+
+onMounted(() => getData());
+
+const onCurrentChange = (page: number) => getData();
 </script>

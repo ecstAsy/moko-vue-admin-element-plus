@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2021-12-21 11:25:57
+ * @LastEditTime: 2021-12-21 13:15:09
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
@@ -55,11 +55,12 @@ const mockStatus = () => {
   return result;
 };
 
-const mockLists = () => {
+const mockLists = (params:any) => {
   const result = {
     code: 0,
     data: data(),
     message: "获取成功！",
+    ...params,
   };
   return new Promise((resolve) => {
     setTimeout(() => resolve(result), 500);
