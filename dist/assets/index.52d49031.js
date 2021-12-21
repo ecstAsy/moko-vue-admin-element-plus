@@ -1,0 +1,1 @@
+import{a6 as r,c as a,w as o,o as t,i as c}from"./vendor.d217c660.js";/* empty css             */import{_ as s}from"./index.8090023a.js";const n={},_=c(" query ");function d(f,i){const e=r;return t(),a(e,null,{default:o(()=>[_]),_:1})}var x=s(n,[["render",d]]);export{x as default};
