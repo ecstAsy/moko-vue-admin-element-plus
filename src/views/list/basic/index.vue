@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:16
- * @LastEditTime: 2021-12-09 15:08:40
+ * @LastEditTime: 2021-12-21 11:21:04
  * @LastEditors: ecstAsy
 -->
 
@@ -11,10 +11,12 @@
     <moko-table
       :data="dataBase"
       :columns="columns"
+      :loading="loading"
+      @current-change="onCurrentChange"
     >
       <template #avatar="scope">
         <el-image
-          style="width: 50px; height: 50px;display: block;border-radius: 50%;"
+          style="width: 30px; height: 30px;display: block;border-radius: 50%;"
           :src="scope.row.avatar"
           fit="cover"
         />
@@ -42,7 +44,8 @@
 import { onMounted, reactive, ref } from "vue";
 import BasicForm from "./BasicForm.vue";
 import { BasicParamsTypes } from "./type";
-import { mokoList } from "@/Http";
+// import { mokoList } from "@/Http";
+import { mockLists } from "@/dataSource";
 
 const columns = [{
   key: "avatar",
@@ -78,16 +81,23 @@ const formParams = reactive<BasicParamsTypes>({
 
 const dataBase = ref([]);
 
+const loading = ref<boolean>(false);
+
 const handleSubmit = async (fields: BasicParamsTypes) => {
   console.log(fields);
 };
 
 const getInitList = async (params: BasicParamsTypes) => {
   try {
-    const res: any = await mokoList(params);
-    dataBase.value = res.data.list;
+    loading.value = true;
+    const res: any = await mockLists();
+    await Promise.all([
+      dataBase.value = res.data.list,
+      loading.value = false,
+    ]);
     return true;
   } catch (error) {
+    loading.value = false;
     return false;
   }
 };
@@ -98,6 +108,10 @@ onMounted(() => {
 
 const onEdit = (info:any) => {
   console.log(info);
+};
+
+const onCurrentChange = (current:number) => {
+  getInitList({ ...formParams, current });
 };
 </script>
 

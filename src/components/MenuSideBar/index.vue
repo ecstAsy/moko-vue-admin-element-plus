@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-03 10:24:06
- * @LastEditTime: 2021-12-05 11:47:39
+ * @LastEditTime: 2021-12-21 11:21:51
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -20,7 +20,7 @@ import { useRouter } from "vue-router";
 import { computed } from "vue";
 import MenuBarItem from "./MenuBarItem.vue";
 
-const props = defineProps({
+defineProps({
   menus: {
     type: Array,
     default: () => [],
@@ -30,8 +30,6 @@ const props = defineProps({
     default: false,
   },
 });
-
-console.log(props);
 
 const route = useRouter().currentRoute;
 const activeRoute = computed(() => {

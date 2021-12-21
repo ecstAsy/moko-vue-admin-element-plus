@@ -43,7 +43,9 @@ module.exports = {
         ],
       },
     ],
-    "new-cap": ["error", { capIsNew: false }],
+    "new-cap": ["error", {
+      capIsNew: false,
+    }],
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -59,12 +61,18 @@ module.exports = {
     "no-console": "off",
     camelcase: "error",
     "comma-dangle": ["error", "always-multiline"],
-    "key-spacing": ["error", { beforeColon: false, afterColon: true }],
+    "key-spacing": ["error", {
+      beforeColon: false,
+      afterColon: true,
+    }],
     "linebreak-style": ["error", "unix"],
     "vue/multi-word-component-names": ["off", {
       ignores: [],
     }],
-    "no-param-reassign": ["error", { props: true, ignorePropertyModificationsFor: ["state", "route", "res"] }],
+    "no-param-reassign": ["error", {
+      props: true,
+      ignorePropertyModificationsFor: ["state", "route", "res"],
+    }],
     "vue/max-attributes-per-line": [
       "error",
       {
@@ -93,6 +101,11 @@ module.exports = {
     "vue/html-closing-bracket-newline": ["error", {
       singleline: "never",
       multiline: "always",
+    }],
+    "no-unused-vars": ["error", {
+      vars: "all",
+      args: "none",
+      ignoreRestSiblings: true,
     }],
   },
 };

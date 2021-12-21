@@ -1,13 +1,14 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:52:53
- * @LastEditTime: 2021-12-09 14:52:55
+ * @LastEditTime: 2021-12-21 11:13:36
  * @LastEditors: ecstAsy
 -->
 
 <template>
   <el-row>
     <el-table
+      v-loading="loading"
       :data="data"
       style="width: 100%"
     >
@@ -39,7 +40,8 @@
         size="medium"
         background
         layout="prev, pager, next"
-        :total="1000"
+        :total="100"
+        @current-change="onCurrentChange"
       />
     </el-col>
   </el-row>
@@ -51,5 +53,11 @@ import { ColumnTypes } from "./type";
 defineProps<{
   data: Array<any>,
   columns: Array<ColumnTypes>
+  loading: boolean
 }>();
+
+const emit = defineEmits<{(e: "current-change", page: number): void
+}>();
+
+const onCurrentChange = (page: number) => emit("current-change", page);
 </script>
