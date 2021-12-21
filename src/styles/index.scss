@@ -21,6 +21,22 @@ body {
 }
 
 .form-item {
+  &-flex {
+    @include flex-row(flex-start);
+
+    .line {
+      margin: 0 17px;
+    }
+  }
+
+  &-100 {
+    width: 100px !important;
+  }
+
+  &-150 {
+    width: 150px !important;
+  }
+
   &-200 {
     width: 200px !important;
   }

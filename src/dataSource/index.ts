@@ -1,10 +1,21 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2021-12-21 13:15:09
+ * @LastEditTime: 2021-12-21 17:42:04
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
+
+const PayWays = [{
+  label: "银行卡",
+  value: 1,
+}, {
+  label: "微信",
+  value: 2,
+}, {
+  label: "支付宝",
+  value: 3,
+}];
 
 const STATUS = [
   {
@@ -31,7 +42,7 @@ const data = () => Mock.mock({
       date: "@date",
       "dynamicType|+1": ["近期热门", "读者推荐"],
       star: "@integer(60, 1000)",
-      address: "@title(3, 5)",
+      address: "@title(2)",
       "times|1-10": 10,
       "status|+1": Array.from(STATUS, ({ value }) => value),
       // statusName():string {
@@ -70,4 +81,5 @@ const mockLists = (params:any) => {
 export {
   mockStatus,
   mockLists,
+  PayWays,
 };

@@ -107,5 +107,7 @@ module.exports = {
       args: "none",
       ignoreRestSiblings: true,
     }],
+    indent: "off",
+    "@typescript-eslint/indent": ["error", 2],
   },
 };
