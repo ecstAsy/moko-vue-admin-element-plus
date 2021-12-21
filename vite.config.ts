@@ -7,7 +7,7 @@ import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
 
 export default defineConfig({
-  base: "/",
+  base: "/moko-vue-elementplus-admin",
   plugins: [
     vue(),
     vueJsx(),
