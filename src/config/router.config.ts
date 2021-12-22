@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:37:15
- * @LastEditTime: 2021-12-21 16:57:23
+ * @LastEditTime: 2021-12-22 17:45:31
  * @LastEditors: ecstAsy
  */
 import { RouteRecordRaw } from "vue-router";
@@ -42,7 +42,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
             path: "/list/query-list",
             name: "ListQuery",
             meta: {
-              title: "查询列表", keepAlive: true, permission: ["admin"],
+              title: "无限列表", keepAlive: true, permission: ["admin"],
             },
             component: () => import("@/views/list/query/index.vue"),
           }, {
