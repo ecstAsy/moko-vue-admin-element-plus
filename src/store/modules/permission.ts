@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:55
- * @LastEditTime: 2021-12-03 10:39:01
+ * @LastEditTime: 2021-12-22 17:36:35
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
@@ -52,7 +52,7 @@ const permission: Module<PermissionTypes, RootTypes> = {
     },
   },
   actions: {
-    generateRoutes({ commit }: any, data: any) {
+    generateRoutes ({ commit }: any, data: any) {
       return new Promise((resolve) => {
         const { roles } = data;
         const accessedRouters = filterAsyncRouter(AsyncRouterMap, roles);

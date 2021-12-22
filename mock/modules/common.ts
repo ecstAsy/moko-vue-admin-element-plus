@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 11:47:01
- * @LastEditTime: 2021-12-02 11:47:01
+ * @LastEditTime: 2021-12-22 17:35:25
  * @LastEditors: ecstAsy
  */
 import { MockMethod } from "vite-plugin-mock";
@@ -36,7 +36,7 @@ const data = Mock.mock({
       address: "@title(3, 5)",
       "times|1-10": 10,
       "status|+1": Array.from(STATUS, ({ value }) => value),
-      statusName() {
+      statusName () {
         const str = STATUS.find((item) => item.value === this.status);
         return str?.label;
       },

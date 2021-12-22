@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:43
- * @LastEditTime: 2021-12-09 14:49:14
+ * @LastEditTime: 2021-12-22 17:36:48
  * @LastEditors: ecstAsy
 -->
 
@@ -61,7 +61,7 @@ const editorConfig = {
   placeholder: "请输入内容...",
   MENU_CONF: {
     insertImage: {
-      checkImage(src: any) {
+      checkImage (src: any) {
         console.log("image src", src);
         if (src.indexOf("http") !== 0) {
           return "图片网址必须以 http/https 开头";

@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:34
- * @LastEditTime: 2021-12-21 18:01:18
+ * @LastEditTime: 2021-12-22 17:33:56
  * @LastEditors: ecstAsy
 -->
 
@@ -27,51 +27,40 @@
         />
       </template>
     </el-steps>
-    <el-row
-      v-loading="loading"
-    >
+    <el-row v-loading="loading">
       <el-col class="step-form-content">
         <template v-if="activeStep === 1">
-          <transfer-form />
+          <transfer-form
+            ref="transfer"
+            @next="onNext"
+          />
         </template>
         <template v-else-if="activeStep === 2">
-          <transfer-info />
+          <transfer-info
+            @prev="activeStep -= 1"
+            @next="onNext"
+          />
         </template>
         <template v-else>
-          <transfer-result />
+          <transfer-result @repeat="activeStep = 1" />
         </template>
       </el-col>
-      <el-col align="center">
-        <el-button
-          v-show="activeStep>1"
-          size="medium"
-          @click="()=>activeStep--"
-        >
-          上一步
-        </el-button>
-        <el-button
-          type="primary"
-          size="medium"
-          @click="onNext"
-        >
-          下一步
-        </el-button>
-      </el-col>
       <el-col class="step-form-toast">
-        <b>说明</b><br>
-        转账到银行卡<br>
-        如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。<br>
-        转账到微信账户<br>
-        如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。<br>
-        转账到支付宝账户<br>
-        如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。<br>
+        <b>说明</b>
+        <br>转账到银行卡
+        <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+        <br>转账到微信账户
+        <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+        <br>转账到支付宝账户
+        <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+        <br>
       </el-col>
     </el-row>
   </el-card>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, Ref } from "vue";
 import { StepItemTypes } from "./type";
 import { TransferForm, TransferInfo, TransferResult } from "./components";
 
@@ -85,12 +74,10 @@ const StepsMap = reactive<Array<StepItemTypes>>([
 
 const activeStep = ref<number>(1);
 
+const transfer = ref<Ref | null>(null);
+
 const onNext = () => {
   activeStep.value += 1;
-  loading.value = true;
-  setTimeout(() => {
-    loading.value = false;
-  }, 1500);
 };
 
 </script>
@@ -104,7 +91,6 @@ const onNext = () => {
 .step-form-toast {
   @include f-s-c(13px, $font-color-info);
   padding: 16px;
-  margin-top: 50px;
   border-top: 1px dashed $font-color-info;
   line-height: 24px;
 }

@@ -1,13 +1,13 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-21 16:58:33
- * @LastEditTime: 2021-12-21 18:01:31
+ * @LastEditTime: 2021-12-22 16:03:48
  * @LastEditors: ecstAsy
 -->
 <template>
   <el-form
     ref="transfer"
-    :modle="transferState"
+    :model="transferState"
     :rules="rules"
     size="medium"
     label-width="45%"
@@ -74,6 +74,15 @@
         controls-position="right"
       />
     </el-form-item>
+    <el-form-item>
+      <el-button
+        type="primary"
+        size="medium"
+        @click="onSubmit"
+      >
+        下一步
+      </el-button>
+    </el-form-item>
   </el-form>
 </template>
 
@@ -83,6 +92,7 @@ import { TransferStateTypes } from "../type";
 import { PayWays } from "@/dataSource";
 
 const transfer = ref<Ref | null>(null);
+const emit = defineEmits<{(e: "next", fields: TransferStateTypes): void}>();
 const payWaysMap = reactive<Array<{label:string, value:number}>>(PayWays);
 const transferState = reactive<TransferStateTypes>({
   account: null,
@@ -128,12 +138,12 @@ const rules = {
     },
   ],
 };
-// const onSubmit = async () => {
-//   try {
-//     await transfer.value.validate();
-//     return transferState;
-//   } catch (error) {
-//     return false;
-//   }
-// };
+const onSubmit = async () => {
+  try {
+    await transfer.value.validate();
+    return emit("next", transferState);
+  } catch (error) {
+    return false;
+  }
+};
 </script>

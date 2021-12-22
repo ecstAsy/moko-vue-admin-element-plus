@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:53:45
- * @LastEditTime: 2021-12-02 14:53:45
+ * @LastEditTime: 2021-12-22 17:36:32
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
@@ -18,7 +18,7 @@ const app: Module<AppStateTypes, RootTypes> = {
     },
   },
   actions: {
-    setCollpase({ commit }: any) {
+    setCollpase ({ commit }: any) {
       return commit("SET_COLLAPSE");
     },
   },

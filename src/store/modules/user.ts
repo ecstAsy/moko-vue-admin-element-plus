@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:30
- * @LastEditTime: 2021-12-20 17:16:53
+ * @LastEditTime: 2021-12-22 17:36:37
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
@@ -26,7 +26,7 @@ const user: Module<UserTypes, RootTypes> = {
   },
   actions: {
     // 登陆
-    async login({ commit }: any, payload) {
+    async login ({ commit }: any, payload) {
       const { account, password } = payload;
       if (account === "moko.admin" && password === "admin") {
         const res: any = {
@@ -56,7 +56,7 @@ const user: Module<UserTypes, RootTypes> = {
     },
 
     // 退出登陆
-    logout({ commit }: any) {
+    logout ({ commit }: any) {
       return new Promise((resolve) => {
         removeItem("token");
         commit("SET_TOKEN", null);
@@ -65,7 +65,7 @@ const user: Module<UserTypes, RootTypes> = {
     },
 
     // 获取用户角色信息
-    getUserInfo({ commit }: any) {
+    getUserInfo ({ commit }: any) {
       return new Promise((resolve) => {
         const roles = ["admin"];
         commit("SET_ROLES", roles);

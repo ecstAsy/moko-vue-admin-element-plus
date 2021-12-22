@@ -109,5 +109,6 @@ module.exports = {
     }],
     indent: "off",
     "@typescript-eslint/indent": ["error", 2],
+    "space-before-function-paren": [2, "always"],
   },
 };
