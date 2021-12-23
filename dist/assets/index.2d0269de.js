@@ -1,1 +1,0 @@
-import{V as o,o as a,c as r,w as t,i as c}from"./vendor.1ea529b9.js";import{_ as n}from"./index.4cbf1ba2.js";const s={},_=c("ddd");function d(i,l){const e=o;return a(),r(e,null,{default:t(()=>[_]),_:1})}var m=n(s,[["render",d]]);export{m as default};
