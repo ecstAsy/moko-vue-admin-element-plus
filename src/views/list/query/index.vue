@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:27
- * @LastEditTime: 2021-12-23 15:27:28
+ * @LastEditTime: 2021-12-24 11:52:23
  * @LastEditors: ecstAsy
 -->
 
@@ -32,7 +32,10 @@
               </el-tag>
             </template>
           </el-col>
-          <el-col class="list-content">
+          <el-col
+            class="list-content"
+            :style="{ backgroundImage: `url(${item.bgimg})` }"
+          >
             {{ item.article }}
           </el-col>
           <el-col class="list-info">
@@ -111,7 +114,7 @@ const load = async () => {
         letter-spacing: 2px;
         writing-mode: vertical-rl;
         background: url(@/assets/txt-bg.png) no-repeat;
-        background-size: 100% 100px;
+        background-size: 100% 70px;
         background-origin: border-box;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -128,7 +131,6 @@ const load = async () => {
     .list-content {
       font-size: 13px;
       line-height: 26px;
-      background: url(@/assets/txt-bg.png) no-repeat;
       background-origin: border-box;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

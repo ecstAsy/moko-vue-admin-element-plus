@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2021-12-23 15:12:08
+ * @LastEditTime: 2021-12-24 11:53:56
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
@@ -46,13 +46,25 @@ const getRandmArry = (arry:Array<string>, num:number) => {
 };
 
 const Texts = [
-  "不要眼眶一红，就觉得人间不值得，散伙是人间常态，你我，又有什么例外！",
+  "不要眼眶一红，就觉得人间不值得！",
+  "散伙是人间常态，你我，又有什么例外！",
   "夏虫不可语于冰，井蛙不可语于海。",
-  "生而未养，断指可还。生而养之，断头可还。未生而养，百世难还！",
+  "生而未养，断指可还。生而养之！",
+  "断头可还。未生而养，百世难还！",
   "二十年芦叶满汀洲，寒沙带浅流。",
   "柳下系船犹未稳，能几日，又中秋。",
   "重过南楼。黄鹤断矶头，故人曾到否？旧江山浑是新愁。",
   "欲买桂花同载酒，终不似，少年游。",
+];
+
+const BgImgs = [
+  "../src/assets/col-1.jpg",
+  "../src/assets/col-2.jpg",
+  "../src/assets/col-3.jpg",
+  "../src/assets/col-4.jpg",
+  "../src/assets/txt-bg.png",
+  "../src/assets/col-5.jpg",
+  "../src/assets/col-6.jpg",
 ];
 
 const data = () => Mock.mock({
@@ -73,6 +85,7 @@ const data = () => Mock.mock({
       view: "@integer(60, 1000)",
       article: "@cparagraph(10,20)",
       "signature|+1": Texts,
+      "bgimg|1": BgImgs,
     },
   ],
 });
@@ -87,11 +100,15 @@ const mockStatus = () => {
 };
 
 const mockLists = (params:any) => {
+  const arry = data();
+  if (params.num === 2) {
+    arry.list = [...arry.list, ...data().list];
+  }
+
   const result = {
     code: 0,
-    data: data(),
+    data: arry,
     message: "获取成功！",
-    ...params,
   };
   return new Promise((resolve) => {
     setTimeout(() => resolve(result), 500);
