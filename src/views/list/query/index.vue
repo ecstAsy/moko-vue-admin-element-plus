@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:27
- * @LastEditTime: 2021-12-24 11:52:23
+ * @LastEditTime: 2021-12-24 13:04:04
  * @LastEditors: ecstAsy
 -->
 
@@ -34,7 +34,7 @@
           </el-col>
           <el-col
             class="list-content"
-            :style="{ backgroundImage: `url(${item.bgimg})` }"
+            :style="{ backgroundImage: `url(${ImageMaps[item.bgimg]})` }"
           >
             {{ item.article }}
           </el-col>
@@ -71,8 +71,14 @@
 <script lang="ts" setup>
 import { ref } from "vue";
 import { mockLists } from "@/dataSource";
+import {
+  col1, col2, col3, col4, col5, col6, txtBg,
+} from "@/assets";
 
 const dataArry = ref<Array<any>>([]);
+const ImageMaps = ref<Array<string>>([
+  col1, col2, col3, col4, col5, col6, txtBg,
+]);
 const loading = ref<boolean>(false);
 const load = async () => {
   loading.value = true;

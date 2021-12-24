@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2021-12-24 11:53:56
+ * @LastEditTime: 2021-12-24 13:06:21
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
@@ -57,16 +57,6 @@ const Texts = [
   "欲买桂花同载酒，终不似，少年游。",
 ];
 
-const BgImgs = [
-  "../src/assets/col-1.jpg",
-  "../src/assets/col-2.jpg",
-  "../src/assets/col-3.jpg",
-  "../src/assets/col-4.jpg",
-  "../src/assets/txt-bg.png",
-  "../src/assets/col-5.jpg",
-  "../src/assets/col-6.jpg",
-];
-
 const data = () => Mock.mock({
   "list|10": [
     {
@@ -85,7 +75,7 @@ const data = () => Mock.mock({
       view: "@integer(60, 1000)",
       article: "@cparagraph(10,20)",
       "signature|+1": Texts,
-      "bgimg|1": BgImgs,
+      "bgimg|1": [0, 1, 2, 3, 4, 5, 6],
     },
   ],
 });
@@ -101,10 +91,9 @@ const mockStatus = () => {
 
 const mockLists = (params:any) => {
   const arry = data();
-  if (params.num === 2) {
-    arry.list = [...arry.list, ...data().list];
+  if (params.num === 12) {
+    arry.list = [...arry.list, ...data().list.splice(8)];
   }
-
   const result = {
     code: 0,
     data: arry,

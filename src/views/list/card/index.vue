@@ -1,12 +1,13 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:22
- * @LastEditTime: 2021-12-24 11:51:50
+ * @LastEditTime: 2021-12-24 13:10:56
  * @LastEditors: ecstAsy
 -->
 
 <template>
   <el-row
+    v-loading="loading"
     :gutter="24"
     class="card-lists"
   >
@@ -31,7 +32,7 @@
           </template>
           <div
             class="card-list"
-            :style="{ backgroundImage: `url(${item.bgimg})` }"
+            :style="{ backgroundImage: `url(${ImageMaps[item.bgimg]})` }"
           >
             <div class="list-content">
               {{ item.article }}
@@ -45,28 +46,50 @@
               <span>{{ item.view }}</span>
             </div>
             <div class="list-footer">
-              {{ item.signature }}
+              ——{{ item.signature }}
             </div>
           </div>
         </el-card>
       </el-col>
     </template>
+    <el-col
+      align="center"
+      style="margin: 24px 0;"
+    >
+      <el-pagination
+        size="medium"
+        background
+        layout="prev, pager, next"
+        :total="100"
+        @current-change="onCurrentChange"
+      />
+    </el-col>
   </el-row>
 </template>
 
 <script lang="ts" setup>
 import { ref, onMounted } from "vue";
 import { mockLists } from "@/dataSource";
+import {
+  col1, col2, col3, col4, col5, col6, txtBg,
+} from "@/assets";
 
 const dataArry = ref<Array<any>>([]);
 const loading = ref<boolean>(false);
+const ImageMaps = ref<Array<string>>([
+  col1, col2, col3, col4, col5, col6, txtBg,
+]);
 const load = async () => {
   loading.value = true;
-  const data: any = await mockLists({ num: 2 });
-  dataArry.value = [...dataArry.value, ...data.data.list];
+  const data: any = await mockLists({ num: 12 });
+  dataArry.value = data.data.list;
   loading.value = false;
 };
 onMounted(() => load());
+
+const onCurrentChange = () => {
+  load();
+};
 </script>
 
 <style lang="scss" scoped>
