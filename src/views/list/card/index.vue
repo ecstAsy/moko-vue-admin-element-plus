@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:22
- * @LastEditTime: 2021-12-24 13:10:56
+ * @LastEditTime: 2021-12-24 13:20:49
  * @LastEditors: ecstAsy
 -->
 
@@ -117,7 +117,8 @@ const onCurrentChange = () => {
     .list-content {
       height: 96px;
       line-height: 16px;
-      @include ellipse(6);
+      @include ellipse(7);
+      overflow: hidden;
     }
 
     .list-action {
