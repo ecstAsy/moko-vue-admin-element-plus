@@ -1,14 +1,14 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 15:02:59
- * @LastEditTime: 2021-12-02 15:02:59
+ * @LastEditTime: 2022-07-06 17:40:31
  * @LastEditors: ecstAsy
  */
 import NProgress from "nprogress";
+import { getToken } from "@/utils/util";
 import router from "./router";
 import { store } from "./store";
 import "nprogress/nprogress.css";
-import { getToken } from "@/utils/util";
 
 const allowList = ["/user/login"];
 // @ts-ignore

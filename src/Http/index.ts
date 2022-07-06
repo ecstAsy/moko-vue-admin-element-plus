@@ -1,25 +1,25 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 11:56:28
- * @LastEditTime: 2022-07-06 17:36:08
+ * @LastEditTime: 2022-07-06 17:39:18
  * @LastEditors: ecstAsy
  */
-import { stringify } from "querystring";
+// import { stringify } from "querystring";
 import { Request } from "./Request";
-import { MergeParamsTypes, UserLoginTypes } from "./type";
+import { UserLoginTypes } from "./type";
 
 // 增删改查合并请求方法
-const MergeRequest = (url: string, params: MergeParamsTypes) => {
-  const { method, id, data } = params;
-  const options:any = { url: id ? `${url}/${id}` : url, method };
-  if (method === "GET") {
-    options.url = data ? `${options.url}?${stringify(data)}` : `${options.url}`;
-  } else {
-    options.data = data;
-  }
+// const MergeRequest = (url: string, params: MergeParamsTypes) => {
+//   const { method, id, data } = params;
+//   const options:any = { url: id ? `${url}/${id}` : url, method };
+//   if (method === "GET") {
+//     options.url = data ? `${options.url}?${stringify(data)}` : `${options.url}`;
+//   } else {
+//     options.data = data;
+//   }
 
-  return Request(options);
-};
+//   return Request(options);
+// };
 const Api = {
   common: {
     allCate: "/common/status",
