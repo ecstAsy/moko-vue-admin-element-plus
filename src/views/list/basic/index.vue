@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:16
- * @LastEditTime: 2021-12-21 13:36:42
+ * @LastEditTime: 2022-07-06 17:05:02
  * @LastEditors: ecstAsy
 -->
 
@@ -20,14 +20,14 @@
       </template>
       <template #action="scope">
         <el-button
-          type="text"
+          text
           @click="onEdit(scope)"
         >
           Edit
         </el-button>
         <el-divider direction="vertical" />
         <el-button
-          type="text"
+          text
           style="color: #f56c6c;"
         >
           Delete
@@ -39,10 +39,10 @@
 
 <script setup lang="ts">
 import { reactive } from "vue";
+import { mockLists } from "@/dataSource";
 import BasicForm from "./BasicForm.vue";
 import { BasicParamsTypes } from "./type";
 // import { mokoList } from "@/Http";
-import { mockLists } from "@/dataSource";
 
 const columns = [{
   key: "avatar",

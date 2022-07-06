@@ -5,12 +5,16 @@ import Components from "unplugin-vue-components/vite";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
+import OptimizationPersist from "vite-plugin-optimize-persist";
+import PkgConfig from "vite-plugin-package-config";
 
 export default defineConfig({
-  base: "/moko-vue-elementplus-admin",
+  // base: "/moko-vue-elementplus-admin",
   plugins: [
     vue(),
     vueJsx(),
+    PkgConfig(),
+    OptimizationPersist(),
     Components({
       resolvers: [
         ElementPlusResolver({
@@ -40,5 +44,12 @@ export default defineConfig({
     host: "0.0.0.0",
     port: 3000,
     open: true,
+    proxy: {
+      "/tm": {
+        target: "http://localhost:98",
+        changeOrigin: true,
+        rewrite: (url) => url.replace(/^\/tm/, ""),
+      },
+    },
   },
 });

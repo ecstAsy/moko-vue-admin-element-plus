@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:26:46
- * @LastEditTime: 2021-12-05 11:39:12
+ * @LastEditTime: 2022-07-06 17:13:49
  * @LastEditors: ecstAsy
 -->
 
@@ -16,7 +16,6 @@
         <router-link :to="{ path: '/' }">
           <el-button
             type="primary"
-            size="medium"
           >
             返回修改
           </el-button>
@@ -56,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { CircleClose } from "@element-plus/icons";
+import { CircleClose } from "@element-plus/icons-vue";
 </script>
 
 <style scoped lang="scss">

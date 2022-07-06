@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-21 16:58:33
- * @LastEditTime: 2021-12-22 16:03:48
+ * @LastEditTime: 2022-07-06 17:12:28
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -9,7 +9,6 @@
     ref="transfer"
     :model="transferState"
     :rules="rules"
-    size="medium"
     label-width="45%"
   >
     <el-form-item
@@ -77,7 +76,6 @@
     <el-form-item>
       <el-button
         type="primary"
-        size="medium"
         @click="onSubmit"
       >
         下一步
@@ -88,8 +86,8 @@
 
 <script lang="ts" setup>
 import { reactive, ref, Ref } from "vue";
-import { TransferStateTypes } from "../type";
 import { PayWays } from "@/dataSource";
+import { TransferStateTypes } from "../type";
 
 const transfer = ref<Ref | null>(null);
 const emit = defineEmits<{(e: "next", fields: TransferStateTypes): void}>();

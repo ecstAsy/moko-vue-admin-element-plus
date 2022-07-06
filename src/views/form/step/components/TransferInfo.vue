@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-21 16:59:07
- * @LastEditTime: 2021-12-22 16:42:42
+ * @LastEditTime: 2022-07-06 17:12:46
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -52,7 +52,6 @@
           <el-input
             v-model="infoState.passward"
             type="password"
-            size="medium"
             class="form-item-220"
             placeholder="请输入支付密码"
           />
@@ -61,13 +60,11 @@
     </el-col>
     <el-col align="center">
       <el-button
-        size="medium"
         @click="emit('prev')"
       >
         上一步
       </el-button>
       <el-button
-        size="medium"
         type="primary"
         @click="onSubmit"
       >

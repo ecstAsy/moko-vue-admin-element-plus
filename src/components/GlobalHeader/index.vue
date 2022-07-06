@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-03 10:01:33
- * @LastEditTime: 2021-12-07 09:17:15
+ * @LastEditTime: 2022-07-06 17:04:26
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -39,7 +39,6 @@
     <div class="moko-global-header-content">
       <el-space
         wrap
-        size="medium"
       >
         <div class="content-item user">
           <el-dropdown

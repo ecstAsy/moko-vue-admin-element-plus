@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:27
- * @LastEditTime: 2021-12-24 13:04:04
+ * @LastEditTime: 2022-07-06 17:08:47
  * @LastEditors: ecstAsy
 -->
 
@@ -27,7 +27,7 @@
               v-for="tag in item.tags"
               :key="tag"
             >
-              <el-tag size="mini">
+              <el-tag>
                 {{ tag }}
               </el-tag>
             </template>
@@ -41,8 +41,8 @@
           <el-col class="list-info">
             <moko-icon icon="Avatar" />
             <el-button
-              type="text"
-              size="mini"
+              type="primary"
+              text
             >
               {{ item.cname }}
             </el-button>

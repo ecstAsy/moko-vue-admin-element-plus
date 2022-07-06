@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:26:41
- * @LastEditTime: 2021-12-05 11:39:15
+ * @LastEditTime: 2022-07-06 17:14:28
  * @LastEditors: ecstAsy
 -->
 
@@ -16,7 +16,6 @@
         <router-link :to="{ path: '/' }">
           <el-button
             type="primary"
-            size="medium"
           >
             返回列表
           </el-button>
@@ -24,13 +23,12 @@
         <router-link :to="{ path: '/' }">
           <el-button
             style="margin: 0 16px;"
-            size="medium"
           >
             查看项目
           </el-button>
         </router-link>
         <router-link :to="{ path: '/' }">
-          <el-button size="medium">
+          <el-button>
             打印
           </el-button>
         </router-link>
@@ -39,7 +37,6 @@
     <div class="page-result-success">
       <el-descriptions
         title="项目信息"
-        size="medium"
       >
         <el-descriptions-item label="项目 ID:">
           20211118
@@ -56,7 +53,6 @@
         style="margin-top: 50px;"
         :active="2"
         align-center
-        size="medium"
       >
         <el-step
           title="创建项目"

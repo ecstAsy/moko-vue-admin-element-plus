@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:56:18
- * @LastEditTime: 2021-12-21 13:37:16
+ * @LastEditTime: 2022-07-06 17:05:48
  * @LastEditors: ecstAsy
 -->
 
@@ -24,7 +24,8 @@
         align="right"
       >
         <el-button
-          type="text"
+          type="primary"
+          text
           style="margin-right: 10px;"
           @click="isFold = !isFold"
         >
@@ -119,8 +120,8 @@
 import {
   ref, Ref, onMounted, reactive,
 } from "vue";
-import { OptionItemTypes, BasicParamsTypes } from "./type";
 import { allCate } from "@/Http";
+import { OptionItemTypes, BasicParamsTypes } from "./type";
 
 const isFold = ref<boolean>(false);
 const Status = ref<Array<OptionItemTypes>>([]);

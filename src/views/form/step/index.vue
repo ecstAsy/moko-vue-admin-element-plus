@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:34
- * @LastEditTime: 2021-12-22 17:33:56
+ * @LastEditTime: 2022-07-06 17:12:05
  * @LastEditors: ecstAsy
 -->
 
@@ -15,7 +15,6 @@
     <el-steps
       :active="activeStep"
       align-center
-      size="mini"
     >
       <template
         v-for="step in StepsMap"

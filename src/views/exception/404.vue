@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-03 10:29:01
- * @LastEditTime: 2021-12-05 11:40:19
+ * @LastEditTime: 2022-07-06 17:15:31
  * @LastEditors: ecstAsy
 -->
 
@@ -16,7 +16,6 @@
         <router-link :to="{ path: '/' }">
           <el-button
             type="info"
-            size="medium"
           >
             Back
           </el-button>

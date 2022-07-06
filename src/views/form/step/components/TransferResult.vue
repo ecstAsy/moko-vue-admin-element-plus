@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-21 16:59:30
- * @LastEditTime: 2021-12-22 17:33:13
+ * @LastEditTime: 2022-07-06 17:12:59
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -15,12 +15,11 @@
         <template #extra>
           <el-button
             type="primary"
-            size="medium"
             @click="emit('repeat')"
           >
             再转一笔
           </el-button>
-          <el-button size="medium">
+          <el-button>
             查看账单
           </el-button>
         </template>

@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:01
- * @LastEditTime: 2021-12-09 15:20:20
+ * @LastEditTime: 2022-07-06 17:10:32
  * @LastEditors: ecstAsy
 -->
 
@@ -16,7 +16,6 @@
       ref="basicForm"
       :model="ruleForm"
       :rules="rules"
-      size="medium"
       label-width="340px"
       class="demo-ruleForm"
     >
