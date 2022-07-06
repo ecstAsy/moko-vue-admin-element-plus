@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:56:18
- * @LastEditTime: 2022-07-06 17:05:48
+ * @LastEditTime: 2022-07-06 17:57:16
  * @LastEditors: ecstAsy
 -->
 
@@ -11,7 +11,6 @@
     :inline="true"
     :model="queryParams"
     label-width="100px"
-    size="small"
   >
     <el-row>
       <el-col :span="12">

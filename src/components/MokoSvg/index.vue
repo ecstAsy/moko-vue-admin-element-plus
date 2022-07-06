@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-04 21:25:29
- * @LastEditTime: 2021-12-04 22:38:30
+ * @LastEditTime: 2022-07-06 17:59:14
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -12,7 +12,8 @@
       marginLeft: `${left}px`,
       marginRight: `${right}px`,
       marginTop: `${top}px`,
-      color: color
+      color: color,
+      fontSize:`${fontSize}px`
     }"
   >
     <use
@@ -50,11 +51,13 @@ const props = defineProps({
     type: Number,
     default: 0,
   },
+  fontSize: {
+    type: Number,
+    default: 14,
+  },
 });
 
 const symbolId = computed(() => `#${props.prefix}-${props.name}`);
-
-console.log(symbolId.value);
 
 </script>
 
@@ -62,8 +65,7 @@ console.log(symbolId.value);
 .moko-svg {
   width: 1em;
   height: 1em;
-  font-size: 18PX;
-  // vertical-align: -0.18em;
+  // vertical-align: 0.18em;
   fill: currentColor;
   overflow: hidden;
 }

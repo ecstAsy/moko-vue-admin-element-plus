@@ -15,6 +15,7 @@ specifiers:
   '@wangeditor/editor-for-vue': ^5.1.8-9
   axios: ^0.24.0
   echarts: ^5.3.0
+  ecstasy-tools: ^1.0.1
   element-plus: ^2.2.8
   eslint: ^7.32.0
   eslint-config-airbnb-base: ^15.0.0
@@ -48,6 +49,7 @@ dependencies:
   '@wangeditor/editor-for-vue': 5.1.8-9_26a06ac585b95237d865829829b38da6
   axios: 0.24.0
   echarts: 5.3.0
+  ecstasy-tools: 1.0.1
   element-plus: 2.2.8_vue@3.2.31
   lodash: 4.17.21
   mockjs: 1.1.0
@@ -1937,6 +1939,10 @@ packages:
     dependencies:
       tslib: 2.3.0
       zrender: 5.3.0
+    dev: false
+
+  /ecstasy-tools/1.0.1:
+    resolution: {integrity: sha512-PY989vjc5QuFgAj1tMZR1IXY/9yJbvdq2QbrcWXrKY+trbcfjH/ovmDyBvSvR4aX/6U4JQV/hmzn1akaReHHEQ==}
     dev: false
 
   /ee-first/1.1.1:

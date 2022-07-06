@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import Components from "unplugin-vue-components/vite";
+import AutoImport from "unplugin-auto-import/vite";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 import { viteMockServe } from "vite-plugin-mock";
@@ -15,6 +16,11 @@ export default defineConfig({
     vueJsx(),
     PkgConfig(),
     OptimizationPersist(),
+    AutoImport({
+      resolvers: [ElementPlusResolver({
+        importStyle: "sass",
+      })],
+    }),
     Components({
       resolvers: [
         ElementPlusResolver({
