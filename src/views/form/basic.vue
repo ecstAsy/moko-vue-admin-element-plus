@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:01
- * @LastEditTime: 2022-07-07 10:58:53
+ * @LastEditTime: 2022-07-07 13:09:38
  * @LastEditors: ecstAsy
 -->
 
@@ -53,7 +53,7 @@
           label="日期"
           required
         >
-          <el-col :span="11">
+          <el-col :span="3">
             <el-form-item prop="date1">
               <el-date-picker
                 v-model="ruleForm.date1"
@@ -65,11 +65,12 @@
           </el-col>
           <el-col
             class="line"
-            :span="2"
+            :span="1"
+            align="center"
           >
             -
           </el-col>
-          <el-col :span="11">
+          <el-col :span="3">
             <el-form-item prop="date2">
               <el-time-picker
                 v-model="ruleForm.date2"
