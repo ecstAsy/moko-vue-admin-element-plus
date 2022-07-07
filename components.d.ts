@@ -62,6 +62,7 @@ declare module "vue" {
     MenuBarItem: typeof import("./src/components/MenuSideBar/MenuBarItem.vue")["default"]
     MenuSideBar: typeof import("./src/components/MenuSideBar/index.vue")["default"]
     MokoDialog: typeof import("./src/components/MokoDialog/index.vue")["default"]
+    MokoFileInfo: typeof import("./src/components/MokoFileInfo/index.vue")["default"]
     MokoIcon: typeof import("./src/components/MokoIcon/index.vue")["default"]
     MokoSvg: typeof import("./src/components/MokoSvg/index.vue")["default"]
     MokoTable: typeof import("./src/components/MokoTable/index.vue")["default"]

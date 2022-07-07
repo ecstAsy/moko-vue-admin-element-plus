@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 18:12:25
- * @LastEditTime: 2022-07-07 11:20:33
+ * @LastEditTime: 2022-07-07 11:50:04
  * @LastEditors: ecstAsy
  */
 import GlobalHeader from "./GlobalHeader/index.vue";
@@ -12,6 +12,7 @@ import MokoSvg from "./MokoSvg/index.vue";
 import MokoTable from "./MokoTable/index.vue";
 import MokoDialog from "./MokoDialog/index.vue";
 import MokoUpload from "./MokoUpload/index.vue";
+import MokoFileInfo from "./MokoFileInfo/index.vue";
 
 export {
   GlobalHeader,
@@ -22,4 +23,5 @@ export {
   MokoTable,
   MokoDialog,
   MokoUpload,
+  MokoFileInfo,
 };
