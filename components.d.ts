@@ -55,6 +55,7 @@ declare module "vue" {
     ElTag: typeof import("element-plus/es")["ElTag"]
     ElTimePicker: typeof import("element-plus/es")["ElTimePicker"]
     ElTooltip: typeof import("element-plus/es")["ElTooltip"]
+    ElUpload: typeof import("element-plus/es")["ElUpload"]
     GlobalHeader: typeof import("./src/components/GlobalHeader/index.vue")["default"]
     InfiniteScroll: typeof import("element-plus/es")["ElInfiniteScroll"]
     Loading: typeof import("element-plus/es")["ElLoadingDirective"]
@@ -64,6 +65,7 @@ declare module "vue" {
     MokoIcon: typeof import("./src/components/MokoIcon/index.vue")["default"]
     MokoSvg: typeof import("./src/components/MokoSvg/index.vue")["default"]
     MokoTable: typeof import("./src/components/MokoTable/index.vue")["default"]
+    MokoUpload: typeof import("./src/components/MokoUpload/index.vue")["default"]
     PageWraper: typeof import("./src/components/PageWraper/index.vue")["default"]
   }
 }

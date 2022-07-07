@@ -1,14 +1,17 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:16
- * @LastEditTime: 2022-07-07 11:14:37
+ * @LastEditTime: 2022-07-07 11:42:39
  * @LastEditors: ecstAsy
 -->
 
 <template>
   <page-wraper>
     <el-card class="basic-list">
-      <basic-form @submit="handleSubmit" />
+      <basic-form
+        @submit="handleSubmit"
+        @create="dialogProps.visible = true"
+      />
       <moko-table
         v-bind="tableProps"
       >
@@ -36,13 +39,15 @@
         </template>
       </moko-table>
     </el-card>
+    <basic-dialog v-bind="dialogProps" />
   </page-wraper>
 </template>
 
 <script setup lang="ts">
+import { reactive } from "vue";
 import { mockLists } from "@/dataSource";
 import { PageWraper, MokoTable } from "@/components";
-import BasicForm from "./BasicForm.vue";
+import { BasicForm, BasicDialog } from "./components";
 import { BasicParamsTypes } from "./type";
 // import { mokoList } from "@/Http";
 
@@ -79,6 +84,17 @@ const tableProps = {
     ...params,
   }),
 };
+
+const dialogProps = reactive({
+  visible: false,
+  loading: false,
+  cancel: () => {
+    dialogProps.visible = false;
+  },
+  confirm: (fields:any) => {
+    console.log("argments:", fields);
+  },
+});
 
 const handleSubmit = async (fields: BasicParamsTypes) => {
   console.log(fields);

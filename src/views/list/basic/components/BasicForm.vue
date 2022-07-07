@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:56:18
- * @LastEditTime: 2022-07-06 17:57:16
+ * @LastEditTime: 2022-07-07 11:29:23
  * @LastEditors: ecstAsy
 -->
 
@@ -14,7 +14,10 @@
   >
     <el-row>
       <el-col :span="12">
-        <el-button type="primary">
+        <el-button
+          type="primary"
+          @click="emit('create')"
+        >
           创建规则
         </el-button>
       </el-col>
@@ -120,7 +123,7 @@ import {
   ref, Ref, onMounted, reactive,
 } from "vue";
 import { allCate } from "@/Http";
-import { OptionItemTypes, BasicParamsTypes } from "./type";
+import { OptionItemTypes, BasicParamsTypes } from "../type";
 
 const isFold = ref<boolean>(false);
 const Status = ref<Array<OptionItemTypes>>([]);
@@ -142,9 +145,11 @@ const getStatus = async () => {
     return false;
   }
 };
-
-const emit = defineEmits<{(e: "submit", fields: BasicParamsTypes): void
-}>();
+interface Emits {
+  (e: "submit", fields: BasicParamsTypes): void
+  (e:"create"):void
+}
+const emit = defineEmits<Emits>();
 
 const onSubmit = () => {
   emit("submit", queryParams);

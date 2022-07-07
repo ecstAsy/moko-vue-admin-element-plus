@@ -52,7 +52,7 @@ const errorHandler = (error: any) => {
 const interceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use((config: AxiosRequestConfig) => {
     const Config = config;
-    const token = LocalStorage.getItem("tm-token");
+    const token = LocalStorage.getItem("moko-token");
     // 如果 token 存在
     // 让每个请求携带自定义 token 请根据实际情况自行修改
     if (token) {

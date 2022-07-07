@@ -121,6 +121,7 @@
         "element-plus/es/components/tag/style/index",
         "element-plus/es/components/time-picker/style/index",
         "element-plus/es/components/tooltip/style/index",
+        "element-plus/es/components/upload/style/index",
         "element-plus/lib/locale/lang/zh-cn",
         "lodash/cloneDeep",
         "mockjs",
