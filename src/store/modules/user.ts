@@ -1,14 +1,13 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:30
- * @LastEditTime: 2021-12-22 17:36:37
+ * @LastEditTime: 2022-07-07 09:48:49
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
 import { RootTypes, UserTypes } from "@/store/type";
-import { setItem, removeItem } from "@/utils/localStorage";
+import { LocalStorage, GetRandomStr } from "ecstasy-tools";
 // import { userLogin } from "@/Http";
-import { getRandomStr } from "@/utils/util";
 
 const user: Module<UserTypes, RootTypes> = {
   state: {
@@ -33,7 +32,7 @@ const user: Module<UserTypes, RootTypes> = {
           code: 0,
           data: {
             name: "Moko",
-            token: getRandomStr(64),
+            token: GetRandomStr(64),
             roles: ["admin"],
           },
           message: "登录成功！",
@@ -41,7 +40,7 @@ const user: Module<UserTypes, RootTypes> = {
           // await userLogin(payload);
         if (!res.code) {
           await Promise.all([
-            setItem("token", res.data.token),
+            LocalStorage.setItem("token", res.data.token),
             commit("SET_TOKEN", res.data.token),
             commit("SET_ROLES", res.data.roles),
           ]);
@@ -58,7 +57,7 @@ const user: Module<UserTypes, RootTypes> = {
     // 退出登陆
     logout ({ commit }: any) {
       return new Promise((resolve) => {
-        removeItem("token");
+        LocalStorage.removeItem("token");
         commit("SET_TOKEN", null);
         resolve(true);
       });

@@ -2,14 +2,14 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:05:40
- * @LastEditTime: 2022-07-06 17:33:27
+ * @LastEditTime: 2022-07-07 09:56:01
  * @LastEditors: ecstAsy
  */
 import axios, {
   AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosPromise,
 } from "axios";
 import { ElMessage } from "element-plus";
-import { getItem } from "@/utils/localStorage";
+import { LocalStorage } from "ecstasy-tools";
 import router from "@/router";
 
 const ENV = import.meta.env;
@@ -52,7 +52,7 @@ const errorHandler = (error: any) => {
 const interceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use((config: AxiosRequestConfig) => {
     const Config = config;
-    const token = getItem("tm-token");
+    const token = LocalStorage.getItem("tm-token");
     // 如果 token 存在
     // 让每个请求携带自定义 token 请根据实际情况自行修改
     if (token) {
