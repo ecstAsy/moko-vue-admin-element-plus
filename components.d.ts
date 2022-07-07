@@ -62,12 +62,17 @@ declare module "vue" {
     MenuBarItem: typeof import("./src/components/MenuSideBar/MenuBarItem.vue")["default"]
     MenuSideBar: typeof import("./src/components/MenuSideBar/index.vue")["default"]
     MokoDialog: typeof import("./src/components/MokoDialog/index.vue")["default"]
+    MokoExport: typeof import("./src/components/MokoExport/index.vue")["default"]
     MokoFileInfo: typeof import("./src/components/MokoFileInfo/index.vue")["default"]
     MokoIcon: typeof import("./src/components/MokoIcon/index.vue")["default"]
+    MokoLink: typeof import("./src/components/MokoLink/index.vue")["default"]
     MokoSvg: typeof import("./src/components/MokoSvg/index.vue")["default"]
     MokoTable: typeof import("./src/components/MokoTable/index.vue")["default"]
+    MokoTitle: typeof import("./src/components/MokoTitle/index.vue")["default"]
     MokoUpload: typeof import("./src/components/MokoUpload/index.vue")["default"]
     PageWraper: typeof import("./src/components/PageWraper/index.vue")["default"]
+    TmExport: typeof import("./src/components/TmExport/index.vue")["default"]
+    TmLink: typeof import("./src/components/TmLink/index.vue")["default"]
   }
 }
 
