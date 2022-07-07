@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:37:15
- * @LastEditTime: 2022-03-02 16:30:03
+ * @LastEditTime: 2022-07-07 10:18:52
  * @LastEditors: ecstAsy
  */
 import { RouteRecordRaw } from "vue-router";
@@ -25,7 +25,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
       {
         path: "/list",
         name: "List",
-        redirect: "/list/search",
+        redirect: "/list/basic-list",
         meta: {
           title: "列表", icon: "Histogram", keepAlive: true, permission: ["admin"],
         },
@@ -86,6 +86,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
       {
         path: "/result",
         name: "Result",
+        redirect: "/result/success",
         meta: {
           title: "结果", icon: "Comment", keepAlive: false, permission: ["admin"],
         },
@@ -105,7 +106,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
       {
         path: "/exception",
         name: "Exception",
-        redirect: "/exception/404",
+        redirect: "/exception/403",
         meta: {
           title: "异常", icon: "WarningFilled", keepAlive: false, permission: ["admin"],
         },

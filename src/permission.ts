@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 15:02:59
- * @LastEditTime: 2022-07-06 17:40:31
+ * @LastEditTime: 2022-07-07 10:15:08
  * @LastEditors: ecstAsy
  */
 import NProgress from "nprogress";

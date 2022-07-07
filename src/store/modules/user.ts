@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:30
- * @LastEditTime: 2022-07-07 09:48:49
+ * @LastEditTime: 2022-07-07 10:13:16
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
@@ -40,7 +40,7 @@ const user: Module<UserTypes, RootTypes> = {
           // await userLogin(payload);
         if (!res.code) {
           await Promise.all([
-            LocalStorage.setItem("token", res.data.token),
+            LocalStorage.setItem("moko-token", res.data.token),
             commit("SET_TOKEN", res.data.token),
             commit("SET_ROLES", res.data.roles),
           ]);
