@@ -83,6 +83,7 @@
         "element-plus/es/components/date-picker/style/index",
         "element-plus/es/components/descriptions-item/style/index",
         "element-plus/es/components/descriptions/style/index",
+        "element-plus/es/components/dialog/style/index",
         "element-plus/es/components/divider/style/index",
         "element-plus/es/components/dropdown-item/style/index",
         "element-plus/es/components/dropdown-menu/style/index",

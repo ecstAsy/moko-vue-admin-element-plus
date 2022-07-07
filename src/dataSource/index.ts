@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2021-12-24 13:06:21
+ * @LastEditTime: 2022-07-07 10:47:51
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
@@ -58,7 +58,7 @@ const Texts = [
 ];
 
 const data = () => Mock.mock({
-  "list|10": [
+  "data|10": [
     {
       id: "@increment",
       "avatar|+1": "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
@@ -89,16 +89,24 @@ const mockStatus = () => {
   return result;
 };
 
-const mockLists = (params:any) => {
-  const arry = data();
+const mockLists = (params: any) => {
+  let arry = data();
   if (params.num === 12) {
-    arry.list = [...arry.list, ...data().list.splice(8)];
+    arry.data = [...arry.data, ...data().data.splice(8)];
   }
+  arry = {
+    ...arry,
+    pageNo: params.current,
+    pageSize: 10,
+    totalCount: 110,
+    totalPage: 10,
+  };
   const result = {
     code: 0,
     data: arry,
     message: "获取成功！",
   };
+
   return new Promise((resolve) => {
     setTimeout(() => resolve(result), 500);
   });

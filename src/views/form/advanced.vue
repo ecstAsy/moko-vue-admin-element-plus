@@ -1,36 +1,38 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:43
- * @LastEditTime: 2021-12-22 17:36:48
+ * @LastEditTime: 2022-07-07 11:00:08
  * @LastEditors: ecstAsy
 -->
 
 <template>
-  <el-card>
-    <div style="border: 1px solid #ccc">
-      <!-- 工具栏 -->
-      <Toolbar
-        :editor-id="editorId"
-        :mode="mode"
-        style="border-bottom: 1px solid #ccc"
-      />
-      <!-- 编辑器 -->
-      <Editor
-        :editor-id="editorId"
-        :mode="mode"
-        :default-config="editorConfig"
-        :default-content="getDefaultContent"
-        style="height: 500px"
-        @on-created="handleCreated"
-        @on-change="handleChange"
-        @on-destroyed="handleDestroyed"
-        @on-focus="handleFocus"
-        @on-blur="handleBlur"
-        @custom-alert="customAlert"
-        @custom-paste="customPaste"
-      />
-    </div>
-  </el-card>
+  <page-wraper>
+    <el-card>
+      <div style="border: 1px solid #ccc">
+        <!-- 工具栏 -->
+        <Toolbar
+          :editor-id="editorId"
+          :mode="mode"
+          style="border-bottom: 1px solid #ccc"
+        />
+        <!-- 编辑器 -->
+        <Editor
+          :editor-id="editorId"
+          :mode="mode"
+          :default-config="editorConfig"
+          :default-content="getDefaultContent"
+          style="height: 500px"
+          @on-created="handleCreated"
+          @on-change="handleChange"
+          @on-destroyed="handleDestroyed"
+          @on-focus="handleFocus"
+          @on-blur="handleBlur"
+          @custom-alert="customAlert"
+          @custom-paste="customPaste"
+        />
+      </div>
+    </el-card>
+  </page-wraper>
 </template>
 
 <script setup lang="ts">
@@ -40,6 +42,7 @@ import {
 } from "@wangeditor/editor-for-vue";
 import { IDomEditor } from "@wangeditor/editor";
 import cloneDeep from "lodash/cloneDeep";
+import { PageWraper } from "@/components";
 
 const editorId = "wangeEditor-1";
 

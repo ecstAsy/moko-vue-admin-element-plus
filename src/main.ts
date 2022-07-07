@@ -2,7 +2,6 @@ import { createApp } from "vue";
 import * as Icons from "@element-plus/icons-vue";
 import router from "@/router";
 import { store, key } from "@/store";
-import components from "@/components";
 import App from "./App.vue";
 
 import "./permission";
@@ -19,5 +18,4 @@ Object.keys(Icons).forEach((icon) => {
 
 app.use(router)
   .use(store, key)
-  .use(components)
   .mount("#app");

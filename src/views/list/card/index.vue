@@ -1,70 +1,72 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:22
- * @LastEditTime: 2021-12-24 13:20:49
+ * @LastEditTime: 2022-07-07 10:57:52
  * @LastEditors: ecstAsy
 -->
 
 <template>
-  <el-row
-    v-loading="loading"
-    :gutter="24"
-    class="card-lists"
-  >
-    <template
-      v-for="item in dataArry"
-      :key="item.id"
+  <page-wraper>
+    <el-row
+      v-loading="loading"
+      :gutter="24"
+      class="card-lists"
     >
-      <el-col :span="6">
-        <el-card>
-          <template #header>
-            <el-row>
-              <el-col :span="12">
-                {{ item.name }}
-              </el-col>
-              <el-col
-                align="right"
-                :span="12"
-              >
-                <span class="header-extra">{{ item.date }}</span>
-              </el-col>
-            </el-row>
-          </template>
-          <div
-            class="card-list"
-            :style="{ backgroundImage: `url(${ImageMaps[item.bgimg]})` }"
-          >
-            <div class="list-content">
-              {{ item.article }}
+      <template
+        v-for="item in dataArry"
+        :key="item.id"
+      >
+        <el-col :span="6">
+          <el-card>
+            <template #header>
+              <el-row>
+                <el-col :span="12">
+                  {{ item.name }}
+                </el-col>
+                <el-col
+                  align="right"
+                  :span="12"
+                >
+                  <span class="header-extra">{{ item.date }}</span>
+                </el-col>
+              </el-row>
+            </template>
+            <div
+              class="card-list"
+              :style="{ backgroundImage: `url(${ImageMaps[item.bgimg]})` }"
+            >
+              <div class="list-content">
+                {{ item.article }}
+              </div>
+              <div class="list-action">
+                <moko-icon icon="Star" />
+                <span>{{ item.star }}</span>
+                <moko-icon icon="ChatDotRound" />
+                <span>{{ item.like }}</span>
+                <moko-icon icon="View" />
+                <span>{{ item.view }}</span>
+              </div>
+              <div class="list-footer">
+                ——{{ item.signature }}
+              </div>
             </div>
-            <div class="list-action">
-              <moko-icon icon="Star" />
-              <span>{{ item.star }}</span>
-              <moko-icon icon="ChatDotRound" />
-              <span>{{ item.like }}</span>
-              <moko-icon icon="View" />
-              <span>{{ item.view }}</span>
-            </div>
-            <div class="list-footer">
-              ——{{ item.signature }}
-            </div>
-          </div>
-        </el-card>
+          </el-card>
+        </el-col>
+      </template>
+      <el-col
+        align="center"
+        style="margin: 24px 0;"
+      >
+        <el-pagination
+          size="medium"
+          background
+          layout="prev, pager, next"
+          :total="100"
+          @current-change="onCurrentChange"
+        />
       </el-col>
-    </template>
-    <el-col
-      align="center"
-      style="margin: 24px 0;"
-    >
-      <el-pagination
-        size="medium"
-        background
-        layout="prev, pager, next"
-        :total="100"
-        @current-change="onCurrentChange"
-      />
-    </el-col>
-  </el-row>
+    </el-row>
+  </page-wraper>
 </template>
 
 <script lang="ts" setup>
@@ -73,6 +75,7 @@ import { mockLists } from "@/dataSource";
 import {
   col1, col2, col3, col4, col5, col6, txtBg,
 } from "@/assets";
+import { PageWraper, MokoIcon } from "@/components";
 
 const dataArry = ref<Array<any>>([]);
 const loading = ref<boolean>(false);
@@ -81,8 +84,8 @@ const ImageMaps = ref<Array<string>>([
 ]);
 const load = async () => {
   loading.value = true;
-  const data: any = await mockLists({ num: 12 });
-  dataArry.value = data.data.list;
+  const data: any = await mockLists({ num: 12, current: 1 });
+  dataArry.value = data.data.data;
   loading.value = false;
 };
 onMounted(() => load());

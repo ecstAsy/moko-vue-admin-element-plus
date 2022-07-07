@@ -1,45 +1,47 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:16
- * @LastEditTime: 2022-07-06 17:05:02
+ * @LastEditTime: 2022-07-07 11:14:37
  * @LastEditors: ecstAsy
 -->
 
 <template>
-  <el-card class="basic-list">
-    <basic-form @submit="handleSubmit" />
-    <moko-table
-      v-bind="tableProps"
-    >
-      <template #avatar="scope">
-        <el-image
-          style="width: 30px; height: 30px;display: block;border-radius: 50%;"
-          :src="scope.row.avatar"
-          fit="cover"
-        />
-      </template>
-      <template #action="scope">
-        <el-button
-          text
-          @click="onEdit(scope)"
-        >
-          Edit
-        </el-button>
-        <el-divider direction="vertical" />
-        <el-button
-          text
-          style="color: #f56c6c;"
-        >
-          Delete
-        </el-button>
-      </template>
-    </moko-table>
-  </el-card>
+  <page-wraper>
+    <el-card class="basic-list">
+      <basic-form @submit="handleSubmit" />
+      <moko-table
+        v-bind="tableProps"
+      >
+        <template #avatar="scope">
+          <el-image
+            style="width: 30px; height: 30px;display: block;border-radius: 50%;"
+            :src="scope.row.avatar"
+            fit="cover"
+          />
+        </template>
+        <template #action="scope">
+          <el-button
+            text
+            @click="onEdit(scope)"
+          >
+            Edit
+          </el-button>
+          <el-divider direction="vertical" />
+          <el-button
+            text
+            type="danger"
+          >
+            Delete
+          </el-button>
+        </template>
+      </moko-table>
+    </el-card>
+  </page-wraper>
 </template>
 
 <script setup lang="ts">
-import { reactive } from "vue";
 import { mockLists } from "@/dataSource";
+import { PageWraper, MokoTable } from "@/components";
 import BasicForm from "./BasicForm.vue";
 import { BasicParamsTypes } from "./type";
 // import { mokoList } from "@/Http";
@@ -71,14 +73,11 @@ const columns = [{
   scopedSlots: { customRender: "action" },
 }];
 
-const formParams = reactive<BasicParamsTypes>({
-  current: 1,
-  pageSize: 10,
-});
-
 const tableProps = {
   columns,
-  load: () => mockLists(formParams),
+  load: (params: any) => mockLists({
+    ...params,
+  }),
 };
 
 const handleSubmit = async (fields: BasicParamsTypes) => {

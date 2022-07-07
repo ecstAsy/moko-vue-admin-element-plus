@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-02 17:00:41
- * @LastEditTime: 2021-12-05 11:48:23
+ * @LastEditTime: 2022-07-07 10:52:43
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -9,10 +9,10 @@
     <el-header class="basic-layout-header">
       <global-header />
     </el-header>
-    <el-container>
+    <el-container class="basic-layout-content">
       <!-- menu -->
       <el-aside
-        class="basic-layout-aside"
+        class="basic-layout-content-aside"
         width="auto"
       >
         <el-scrollbar>
@@ -29,8 +29,10 @@
         </div>
       </el-aside>
       <!-- main -->
-      <el-main class="basic-layout-main">
-        <router-view />
+      <el-main class="basic-layout-content-main">
+        <el-scrollbar>
+          <router-view />
+        </el-scrollbar>
       </el-main>
     </el-container>
   </el-container>
@@ -39,6 +41,7 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
 import { useStore } from "@/store";
+import { GlobalHeader, MenuSideBar, MokoIcon } from "@/components";
 
 const store = useStore();
 
@@ -63,23 +66,27 @@ const onCollapse = () => store.dispatch("setCollpase");
     background-color: #fff;
   }
 
-  &-aside {
-    height: 100%;
-    background-color: #fff;
-    @include flex-column();
-    box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.1);
+  &-content {
+    height: calc(100% - 56px);
+    &-aside {
+      height: 100%;
+      background-color: #fff;
+      @include flex-column();
+      box-shadow: 0px 2px 12px -6px rgba(0, 0, 0, 0.1);
 
-    .aside-link {
-      line-height: 45px;
-      cursor: pointer;
-      &:hover {
-        color: $primary-color;
+      .aside-link {
+        line-height: 45px;
+        cursor: pointer;
+        &:hover {
+          color: $primary-color;
+        }
       }
+    }
+
+    &-main {
+      padding: 0;
     }
   }
 
-  &-main {
-    padding: 16px;
-  }
 }
 </style>

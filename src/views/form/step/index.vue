@@ -1,65 +1,68 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:34
- * @LastEditTime: 2022-07-06 17:12:05
+ * @LastEditTime: 2022-07-07 10:59:29
  * @LastEditors: ecstAsy
 -->
 
 <template>
-  <el-card>
-    <template #header>
-      <div class="card-header">
-        <span>分步表单</span>
-      </div>
-    </template>
-    <el-steps
-      :active="activeStep"
-      align-center
-    >
-      <template
-        v-for="step in StepsMap"
-        :key="step.value"
-      >
-        <el-step
-          :title="step.title"
-          :icon="step.icon"
-        />
+  <page-wraper>
+    <el-card>
+      <template #header>
+        <div class="card-header">
+          <span>分步表单</span>
+        </div>
       </template>
-    </el-steps>
-    <el-row v-loading="loading">
-      <el-col class="step-form-content">
-        <template v-if="activeStep === 1">
-          <transfer-form
-            ref="transfer"
-            @next="onNext"
+      <el-steps
+        :active="activeStep"
+        align-center
+      >
+        <template
+          v-for="step in StepsMap"
+          :key="step.value"
+        >
+          <el-step
+            :title="step.title"
+            :icon="step.icon"
           />
         </template>
-        <template v-else-if="activeStep === 2">
-          <transfer-info
-            @prev="activeStep -= 1"
-            @next="onNext"
-          />
-        </template>
-        <template v-else>
-          <transfer-result @repeat="activeStep = 1" />
-        </template>
-      </el-col>
-      <el-col class="step-form-toast">
-        <b>说明</b>
-        <br>转账到银行卡
-        <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-        <br>转账到微信账户
-        <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-        <br>转账到支付宝账户
-        <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-        <br>
-      </el-col>
-    </el-row>
-  </el-card>
+      </el-steps>
+      <el-row v-loading="loading">
+        <el-col class="step-form-content">
+          <template v-if="activeStep === 1">
+            <transfer-form
+              ref="transfer"
+              @next="onNext"
+            />
+          </template>
+          <template v-else-if="activeStep === 2">
+            <transfer-info
+              @prev="activeStep -= 1"
+              @next="onNext"
+            />
+          </template>
+          <template v-else>
+            <transfer-result @repeat="activeStep = 1" />
+          </template>
+        </el-col>
+        <el-col class="step-form-toast">
+          <b>说明</b>
+          <br>转账到银行卡
+          <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+          <br>转账到微信账户
+          <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+          <br>转账到支付宝账户
+          <br>如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+          <br>
+        </el-col>
+      </el-row>
+    </el-card>
+  </page-wraper>
 </template>
 
 <script lang="ts" setup>
 import { ref, reactive, Ref } from "vue";
+import { PageWraper } from "@/components";
 import { StepItemTypes } from "./type";
 import { TransferForm, TransferInfo, TransferResult } from "./components";
 

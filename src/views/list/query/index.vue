@@ -1,71 +1,73 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:27
- * @LastEditTime: 2022-07-06 17:08:47
+ * @LastEditTime: 2022-07-07 10:58:25
  * @LastEditors: ecstAsy
 -->
 
 <template>
-  <el-card v-loading="loading">
-    <ul
-      v-infinite-scroll="load"
-      class="infinite-list"
-      style="overflow: auto"
-    >
-      <li
-        v-for="(item,i) in dataArry"
-        :key="i"
-        class="infinite-list-item"
+  <page-wraper>
+    <el-card v-loading="loading">
+      <ul
+        v-infinite-scroll="load"
+        class="infinite-list"
+        style="overflow: auto"
       >
-        <el-row>
-          <el-col class="list-title">
-            <b>{{ item.name }}</b>
-            <div>{{ item.signature }}</div>
-          </el-col>
-          <el-col class="list-tags">
-            <template
-              v-for="tag in item.tags"
-              :key="tag"
+        <li
+          v-for="(item,i) in dataArry"
+          :key="i"
+          class="infinite-list-item"
+        >
+          <el-row>
+            <el-col class="list-title">
+              <b>{{ item.name }}</b>
+              <div>{{ item.signature }}</div>
+            </el-col>
+            <el-col class="list-tags">
+              <template
+                v-for="tag in item.tags"
+                :key="tag"
+              >
+                <el-tag>
+                  {{ tag }}
+                </el-tag>
+              </template>
+            </el-col>
+            <el-col
+              class="list-content"
+              :style="{ backgroundImage: `url(${ImageMaps[item.bgimg]})` }"
             >
-              <el-tag>
-                {{ tag }}
-              </el-tag>
-            </template>
-          </el-col>
-          <el-col
-            class="list-content"
-            :style="{ backgroundImage: `url(${ImageMaps[item.bgimg]})` }"
-          >
-            {{ item.article }}
-          </el-col>
-          <el-col class="list-info">
-            <moko-icon icon="Avatar" />
-            <el-button
-              type="primary"
-              text
-            >
-              {{ item.cname }}
-            </el-button>
-            <span>
-              发布在
-              <a href="/">
-                {{ item.dynamicType }}
-              </a>
-            </span>
-            <span>{{ item.date }}</span>
-          </el-col>
-          <el-col class="list-action">
-            <moko-icon icon="Star" />
-            <span>{{ item.star }}</span>
-            <moko-icon icon="ChatDotRound" />
-            <span>{{ item.like }}</span>
-            <moko-icon icon="View" />
-            <span>{{ item.view }}</span>
-          </el-col>
-        </el-row>
-      </li>
-    </ul>
-  </el-card>
+              {{ item.article }}
+            </el-col>
+            <el-col class="list-info">
+              <moko-icon icon="Avatar" />
+              <el-button
+                type="primary"
+                text
+              >
+                {{ item.cname }}
+              </el-button>
+              <span>
+                发布在
+                <a href="/">
+                  {{ item.dynamicType }}
+                </a>
+              </span>
+              <span>{{ item.date }}</span>
+            </el-col>
+            <el-col class="list-action">
+              <moko-icon icon="Star" />
+              <span>{{ item.star }}</span>
+              <moko-icon icon="ChatDotRound" />
+              <span>{{ item.like }}</span>
+              <moko-icon icon="View" />
+              <span>{{ item.view }}</span>
+            </el-col>
+          </el-row>
+        </li>
+      </ul>
+    </el-card>
+  </page-wraper>
 </template>
 
 <script lang="ts" setup>
@@ -74,6 +76,7 @@ import { mockLists } from "@/dataSource";
 import {
   col1, col2, col3, col4, col5, col6, txtBg,
 } from "@/assets";
+import { PageWraper } from "@/components";
 
 const dataArry = ref<Array<any>>([]);
 const ImageMaps = ref<Array<string>>([
@@ -82,8 +85,9 @@ const ImageMaps = ref<Array<string>>([
 const loading = ref<boolean>(false);
 const load = async () => {
   loading.value = true;
-  const data:any = await mockLists(1);
-  dataArry.value = [...dataArry.value, ...data.data.list];
+  const data: any = await mockLists(1);
+
+  dataArry.value = [...dataArry.value, ...data.data.data];
   loading.value = false;
 };
 </script>

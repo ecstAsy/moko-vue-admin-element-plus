@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:37:15
- * @LastEditTime: 2022-07-07 10:18:52
+ * @LastEditTime: 2022-07-07 11:16:08
  * @LastEditors: ecstAsy
  */
 import { RouteRecordRaw } from "vue-router";
@@ -18,7 +18,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
         path: "/dashboard",
         name: "Dashboard",
         meta: {
-          title: "工作台", icon: "Platform", keepAlive: true, permission: ["admin"],
+          title: "工作台", icon: "Platform", keepAlive: false, permission: ["admin"],
         },
         component: () => import("@/views/dashboard/index.vue"),
       },
@@ -35,7 +35,7 @@ const AsyncRouterMap: Array<RouteRecordRaw> = [
             path: "/list/basic-list",
             name: "ListBasic",
             meta: {
-              title: "标准列表", keepAlive: true, permission: ["admin"],
+              title: "标准列表", keepAlive: false, permission: ["admin"],
             },
             component: () => import("@/views/list/basic/index.vue"),
           }, {

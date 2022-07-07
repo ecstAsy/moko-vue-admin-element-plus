@@ -64,6 +64,7 @@ declare module "vue" {
     MokoIcon: typeof import("./src/components/MokoIcon/index.vue")["default"]
     MokoSvg: typeof import("./src/components/MokoSvg/index.vue")["default"]
     MokoTable: typeof import("./src/components/MokoTable/index.vue")["default"]
+    PageWraper: typeof import("./src/components/PageWraper/index.vue")["default"]
   }
 }
 
