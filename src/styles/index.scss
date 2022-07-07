@@ -1,4 +1,5 @@
 @import "./mixin.scss";
+@import "./element.scss";
 @import '@wangeditor/editor/dist/css/style.css';
 
 #app,
@@ -8,6 +9,19 @@ body {
   padding: 0;
   height: 100%;
   background-color: #f8f8f8;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
 }
 
 #nprogress {

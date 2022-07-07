@@ -1,0 +1,19 @@
+@import "./mixin.scss";
+
+// el-button
+.el-button {
+  line-height: 0 !important;
+
+  &--primary:focus {
+    background-color: $primary-color;
+  }
+
+  &.is-text:not(.is-disabled):focus {
+    // background-color: transparent;
+  }
+}
+
+// el-pagination
+.el-pagination {
+  justify-content: center
+}

@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-03 10:24:06
- * @LastEditTime: 2021-12-21 11:21:51
+ * @LastEditTime: 2022-07-07 09:13:52
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -49,27 +49,14 @@ const activeRoute = computed(() => {
     border: none;
 
     :deep(.el-menu-item) {
-      display: block;
-      @include hl(45px);
+      @include hl(48px);
       &.is-active {
-        background-color: #f1f0fe;
         color: $primary-color;
-        .el-sub-menu__title {
-          color: $primary-color !important;
-        }
-      }
-      * {
-        vertical-align: text-top;
       }
     }
 
     :deep(.el-sub-menu .el-sub-menu__title) {
-      display: block;
-      @include hl(45px);
-
-      * {
-        vertical-align: middle;
-      }
+      @include hl(48px);
     }
 
     :deep(.el-sub-menu.is-active .el-sub-menu__title) {

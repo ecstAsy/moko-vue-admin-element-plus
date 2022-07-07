@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@commitlint/cli': ^15.0.0
   '@commitlint/config-conventional': ^15.0.0
-  '@element-plus/icons-vue': ^1.0.0
+  '@element-plus/icons-vue': ^2.0.6
   '@types/lodash': ^4.14.179
   '@types/node': ^16.11.26
   '@types/nprogress': ^0.2.0
@@ -42,7 +42,7 @@ specifiers:
   vuex: ^4.0.2
 
 dependencies:
-  '@element-plus/icons-vue': 1.0.0_vue@3.2.31
+  '@element-plus/icons-vue': 2.0.6_vue@3.2.31
   '@types/lodash': 4.14.179
   '@types/nprogress': 0.2.0
   '@wangeditor/editor': 0.12.11
@@ -550,14 +550,6 @@ packages:
   /@ctrl/tinycolor/3.4.1:
     resolution: {integrity: sha512-ej5oVy6lykXsvieQtqZxCOaLT+xD4+QNarq78cIYISHmZXshCvROLudpQN3lfL8G0NL7plMSSK+zlyvCaIJ4Iw==}
     engines: {node: '>=10'}
-    dev: false
-
-  /@element-plus/icons-vue/1.0.0_vue@3.2.31:
-    resolution: {integrity: sha512-v8W6uiOfwq9GRWBLc0fvp0WwExU09BLdYfldRBxWUCJHeJ9WHeFrtt6BdixGVl9SCZ2V5soB8gi4tr365a9p/Q==}
-    peerDependencies:
-      vue: ^3.2.0
-    dependencies:
-      vue: 3.2.31
     dev: false
 
   /@element-plus/icons-vue/2.0.6_vue@3.2.31:
