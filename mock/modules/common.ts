@@ -1,7 +1,8 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 11:47:01
- * @LastEditTime: 2021-12-22 17:35:25
+ * @LastEditTime: 2022-07-07 16:22:25
  * @LastEditors: ecstAsy
  */
 import { MockMethod } from "vite-plugin-mock";

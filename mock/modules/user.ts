@@ -1,11 +1,12 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 11:46:34
- * @LastEditTime: 2021-12-02 11:52:05
+ * @LastEditTime: 2022-07-07 15:11:13
  * @LastEditors: ecstAsy
  */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import { MockMethod } from "vite-plugin-mock";
-import { getRandomStr } from "../../src/utils/util";
+import { GetRandomStr } from "ecstasy-tools";
 
 const user: Array<MockMethod> = [
   {
@@ -15,7 +16,7 @@ const user: Array<MockMethod> = [
       code: 0,
       data: {
         name: "Moko",
-        token: getRandomStr(64),
+        token: GetRandomStr(64),
         roles: ["admin"],
       },
       message: "登录成功！",

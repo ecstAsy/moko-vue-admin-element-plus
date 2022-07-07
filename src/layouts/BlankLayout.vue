@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-03 10:30:50
- * @LastEditTime: 2022-07-07 11:07:53
+ * @LastEditTime: 2022-07-07 13:48:14
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -11,17 +11,12 @@
         mode="out-in"
         name="fade-transform"
       >
-        <keep-alive v-if="route.meta.keepAlive">
+        <keep-alive>
           <component
             :is="Component"
             :key="route.name"
           />
         </keep-alive>
-        <component
-          :is="Component"
-          v-else
-          :key="route.name"
-        />
       </transition>
     </router-view>
   </div>

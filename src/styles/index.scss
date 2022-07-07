@@ -1,6 +1,4 @@
 @import "./mixin.scss";
-@import "./element.scss";
-@import '@wangeditor/editor/dist/css/style.css';
 
 #app,
 html,
@@ -83,5 +81,34 @@ a:hover {
 
   &-info {
     color: $font-color-info;
+  }
+}
+
+// el-button
+.el-button {
+  line-height: 0 !important;
+
+  &--primary:focus {
+    background-color: $primary-color;
+  }
+
+  // &.is-text:not(.is-disabled):focus {
+  //   background-color: transparent;
+  // }
+}
+
+// el-pagination
+.el-pagination {
+  justify-content: center
+}
+
+// el-card
+.el-card {
+  box-sizing: border-box;
+  box-shadow: none;
+  border-radius: 4px !important;
+
+  .el-card__body {
+    padding: 16px !important;
   }
 }

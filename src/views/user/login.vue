@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-07 13:10:20
- * @LastEditTime: 2021-12-22 15:39:57
+ * @LastEditTime: 2022-07-07 15:54:20
  * @LastEditors: ecstAsy
 -->
 
@@ -118,11 +118,14 @@ const onSubmit = async () => {
     if (res.code) {
       return ElMessage.error(res.message);
     }
+
     return Promise.all([
       ElMessage.success(res.message),
       router.push({ path: "/" }),
     ]);
   } catch (error) {
+    console.log(error);
+
     await (loading.value = false);
     return false;
   }

@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:30
- * @LastEditTime: 2022-07-07 11:19:46
+ * @LastEditTime: 2022-07-07 13:45:20
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
@@ -57,7 +57,7 @@ const user: Module<UserTypes, RootTypes> = {
     // 退出登陆
     logout ({ commit }: any) {
       return new Promise((resolve) => {
-        LocalStorage.removeItem("token");
+        LocalStorage.removeItem("moko-token");
         commit("SET_TOKEN", null);
         resolve(true);
       });

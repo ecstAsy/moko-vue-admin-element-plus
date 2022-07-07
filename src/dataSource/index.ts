@@ -1,9 +1,10 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2022-07-07 10:47:51
+ * @LastEditTime: 2022-07-07 16:22:50
  * @LastEditors: ecstAsy
  */
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Mock from "mockjs";
 
 const PayWays = [{
