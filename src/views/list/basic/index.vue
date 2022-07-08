@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:54:16
- * @LastEditTime: 2022-07-07 16:18:41
+ * @LastEditTime: 2022-07-08 10:14:05
  * @LastEditors: ecstAsy
 -->
 
@@ -15,7 +15,7 @@
       <moko-table
         v-bind="tableProps"
       >
-        <template #avatar="scope">
+        <template #avatar="scope:any">
           <el-image
             style="width: 30px; height: 30px;display: block;border-radius: 50%;"
             :src="scope.row.avatar"
@@ -24,6 +24,7 @@
         </template>
         <template #action="scope">
           <el-button
+            v-permission="['dd']"
             text
             @click="onEdit(scope)"
           >

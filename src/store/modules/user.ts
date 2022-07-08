@@ -1,7 +1,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 14:54:30
- * @LastEditTime: 2022-07-07 13:45:20
+ * @LastEditTime: 2022-07-08 10:13:32
  * @LastEditors: ecstAsy
  */
 import { Module } from "vuex";
@@ -13,6 +13,9 @@ const user: Module<UserTypes, RootTypes> = {
   state: {
     token: "",
     roles: [],
+    userInfo: {
+      authdata: [],
+    },
   },
   mutations: {
     SET_TOKEN: (state: UserTypes, token: string): void => {
