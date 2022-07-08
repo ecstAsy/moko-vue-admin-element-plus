@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-05 11:50:01
- * @LastEditTime: 2022-07-07 13:09:38
+ * @LastEditTime: 2022-07-08 15:00:15
  * @LastEditors: ecstAsy
 -->
 
@@ -27,6 +27,7 @@
           <el-input
             v-model="ruleForm.name"
             class="form-item-340"
+            clearable
             placeholder="请输入名称"
           />
         </el-form-item>
@@ -122,11 +123,12 @@
           label="备注"
           prop="desc"
         >
-          <el-input
+          <!-- <el-input
             v-model="ruleForm.desc"
             class="form-item-340"
             type="textarea"
-          />
+          /> -->
+          <moko-textarea v-model:value="ruleForm.desc" />
         </el-form-item>
         <el-form-item>
           <el-button
@@ -146,7 +148,7 @@
 
 <script setup lang="ts">
 import { reactive, ref, Ref } from "vue";
-import { PageWraper } from "@/components";
+import { PageWraper, MokoTextarea } from "@/components";
 import { IBasicForm } from "./type";
 
 const basicForm = ref<Ref | null>(null);

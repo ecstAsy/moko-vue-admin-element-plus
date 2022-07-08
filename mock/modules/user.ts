@@ -1,10 +1,9 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 11:46:34
- * @LastEditTime: 2022-07-07 15:11:13
+ * @LastEditTime: 2022-07-08 15:25:16
  * @LastEditors: ecstAsy
  */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { MockMethod } from "vite-plugin-mock";
 import { GetRandomStr } from "ecstasy-tools";
 
