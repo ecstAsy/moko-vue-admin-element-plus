@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:56:18
- * @LastEditTime: 2022-07-07 11:29:23
+ * @LastEditTime: 2022-07-08 15:36:28
  * @LastEditors: ecstAsy
 -->
 
@@ -120,9 +120,8 @@
 
 <script setup lang="ts">
 import {
-  ref, Ref, onMounted, reactive,
+  ref, Ref, reactive,
 } from "vue";
-import { allCate } from "@/Http";
 import { OptionItemTypes, BasicParamsTypes } from "../type";
 
 const isFold = ref<boolean>(false);
@@ -136,15 +135,15 @@ const queryParams = reactive<BasicParamsTypes>({
   des: null,
 });
 
-const getStatus = async () => {
-  try {
-    const res: any = await allCate();
-    Status.value = res.data;
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
+// const getStatus = async () => {
+//   try {
+//     const res: any = await allCate();
+//     Status.value = res.data;
+//     return true;
+//   } catch (error) {
+//     return false;
+//   }
+// };
 interface Emits {
   (e: "submit", fields: BasicParamsTypes): void
   (e:"create"):void
@@ -160,7 +159,7 @@ const onReset = async () => {
   return emit("submit", queryParams);
 };
 
-onMounted(() => {
-  getStatus();
-});
+// onMounted(() => {
+//   getStatus();
+// });
 </script>
