@@ -2,7 +2,7 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-02 13:05:40
- * @LastEditTime: 2022-07-07 09:56:01
+ * @LastEditTime: 2022-07-08 11:15:10
  * @LastEditors: ecstAsy
  */
 import axios, {
@@ -34,11 +34,30 @@ const defaultConfig: AxiosRequestConfig = {
  */
 const mergeConfig = (options: AxiosRequestConfig): AxiosRequestConfig => Object.assign(defaultConfig, options);
 
+const errorStatus: {
+  [proppname:number]: string
+} = {
+  400: "请求错误！",
+  401: "未授权，请登录！",
+  403: "拒绝访问！",
+  404: "请求地址出错！",
+  408: "请求超时！",
+  500: "服务器内部错误！",
+  501: "服务未实现！",
+  502: "网关错误！",
+  503: "服务不可用！",
+  504: "网关超时！",
+  508: "HTTP版本不受支持！",
+};
 // 异常拦截处理器
 const errorHandler = (error: any) => {
   if (error.response) {
-    if (error.response.status === 403) {
-      router.push("/403?error=no_auth");
+    const { status } = error.response;
+    if (errorStatus[status]) {
+      ElMessage.error(errorStatus[status]);
+      if (status === 403) {
+        router.push("/403?error=no_auth");
+      }
     }
   }
   return Promise.reject(error);
@@ -52,11 +71,11 @@ const errorHandler = (error: any) => {
 const interceptors = (instance: AxiosInstance) => {
   instance.interceptors.request.use((config: AxiosRequestConfig) => {
     const Config = config;
-    const token = LocalStorage.getItem("moko-token");
+    const httpToken = LocalStorage.getItem("moko-token");
     // 如果 token 存在
     // 让每个请求携带自定义 token 请根据实际情况自行修改
-    if (token) {
-      Config.headers!.Authorization = `Bearer ${token}`;
+    if (httpToken) {
+      Config.headers!.Authorization = `Bearer ${httpToken}`;
     }
     return Config;
   }, errorHandler);
