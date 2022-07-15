@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-09 14:52:53
- * @LastEditTime: 2022-07-07 10:27:04
+ * @LastEditTime: 2022-07-15 14:12:48
  * @LastEditors: ecstAsy
 -->
 
@@ -177,10 +177,6 @@ const getRowKeys = (row:any) => row[props.rowKey];
 const State = reactive<MokoTableStateTypes>({
   columns: [],
   dataSource: [],
-  statisticsProps: {
-    type: props.origin,
-    values: undefined,
-  },
   pagination: {
     total: 0,
     pageSize: 10,
@@ -192,7 +188,7 @@ const getData = async (current = 1) => {
     loading.value = true;
     const res:any = await props.load({ current, pageSize: 10 });
     const {
-      data, pageSize, totalCount, pageNo, count, fields,
+      data, pageSize, totalCount, pageNo, fields,
     } = res.data;
     if (fields) {
       let columns:Array<ColumnTypes> = [];
@@ -240,7 +236,6 @@ const getData = async (current = 1) => {
       pageSize,
       currentPage: pageNo,
     };
-    State.statisticsProps.values = count || undefined;
     loading.value = false;
     return true;
   } catch (error) {
