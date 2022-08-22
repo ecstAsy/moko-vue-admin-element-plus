@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-02 17:07:14
- * @LastEditTime: 2021-12-07 13:04:51
+ * @LastEditTime: 2022-07-15 17:02:45
  * @LastEditors: ecstAsy
 -->
 <template>
@@ -22,26 +22,19 @@
   </el-container>
 </template>
 
-<script setup lang="ts">
-
-</script>
-
 <style lang="scss" scoped>
 @import "@/styles/index.scss";
 
 .user-layout {
-  min-height: 1000px;
+  height: 100%;
   background-color: #fff;
 
   &-content {
-    padding-top: 100px;
+    @include flex-row();
   }
 
   &-footer {
-    line-height: 30px;
-    background-color: #fff;
     text-align: center;
-    @include flex-column();
     .footer-links {
       a {
        @include f-s-c(12px, $font-color-info);

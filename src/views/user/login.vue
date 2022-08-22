@@ -1,7 +1,7 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-07 13:10:20
- * @LastEditTime: 2022-07-07 15:54:20
+ * @LastEditTime: 2022-07-15 17:03:18
  * @LastEditors: ecstAsy
 -->
 
@@ -124,8 +124,6 @@ const onSubmit = async () => {
       router.push({ path: "/" }),
     ]);
   } catch (error) {
-    console.log(error);
-
     await (loading.value = false);
     return false;
   }
@@ -141,6 +139,7 @@ const onSubmit = async () => {
   box-shadow: 0 0px 20px 8px #f8f8f8;
   border-radius: 16px;
   overflow: hidden;
+  background-color: #fff;
   @include flex-row(center);
   .login-img {
     width: 553px;
