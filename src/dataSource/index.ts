@@ -1,42 +1,56 @@
 /*
  * @Author: ecstAsy
  * @Date: 2021-12-21 09:35:16
- * @LastEditTime: 2022-07-08 15:25:42
+ * @LastEditTime: 2022-10-21 17:10:12
  * @LastEditors: ecstAsy
  */
 import Mock from "mockjs";
 
-const PayWays = [{
-  label: "银行卡",
-  value: 1,
-}, {
-  label: "微信",
-  value: 2,
-}, {
-  label: "支付宝",
-  value: 3,
-}];
+const PayWays = [
+  {
+    label: "银行卡",
+    value: 1,
+  },
+  {
+    label: "微信",
+    value: 2,
+  },
+  {
+    label: "支付宝",
+    value: 3,
+  },
+];
 
 const STATUS = [
   {
     label: "未开始",
     value: 1,
-  }, {
+  },
+  {
     label: "运行中",
     value: 2,
-  }, {
+  },
+  {
     label: "已完成",
     value: 3,
-  }, {
+  },
+  {
     label: "已过期",
     value: 4,
   },
 ];
 
-const Tags = ["近期热门", "读者推荐", "设计语言", "人间常态", "隔岸观火", "釜底抽薪"];
+const Tags = [
+  "近期热门",
+  "读者推荐",
+  "设计语言",
+  "人间常态",
+  "隔岸观火",
+  "釜底抽薪",
+];
 
-const getRandmArry = (arry:Array<string>, num:number) => {
-  let vs:Array<string> = [];
+const getRandmArry = (arry: Array<string>, num: number) => {
+  let vs: Array<string> = [];
   let i = 1;
   while (i <= num) {
     vs = [...vs, arry[Math.floor(Math.random() * arry.length)]];
@@ -57,28 +71,30 @@ const Texts = [
   "欲买桂花同载酒，终不似，少年游。",
 ];
 
-const data = () => Mock.mock({
-  "data|10": [
-    {
-      id: "@increment",
-      "avatar|+1": "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
-      "name|+1": "@name",
-      "cname|+1": "@cname",
-      date: "@datetime",
-      "dynamicType|+1": ["近期热门", "读者推荐"],
-      star: "@integer(60, 1000)",
-      address: "@title(2)",
-      "times|1-10": 10,
-      "status|+1": Array.from(STATUS, ({ value }) => value),
-      tags: new Set([...getRandmArry(Tags, 4)]),
-      like: "@integer(60, 1000)",
-      view: "@integer(60, 1000)",
-      article: "@cparagraph(10,20)",
-      "signature|+1": Texts,
-      "bgimg|1": [0, 1, 2, 3, 4, 5, 6],
-    },
-  ],
-});
+const data = () =>
+  Mock.mock({
+    "data|10": [
+      {
+        id: "@increment",
+        "avatar|+1":
+          "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg",
+        "name|+1": "@name",
+        "cname|+1": "@cname",
+        date: "@datetime",
+        "dynamicType|+1": ["近期热门", "读者推荐"],
+        star: "@integer(60, 1000)",
+        address: "@title(2)",
+        "times|1-10": 10,
+        "status|+1": Array.from(STATUS, ({ value }) => value),
+        tags: new Set([...getRandmArry(Tags, 4)]),
+        like: "@integer(60, 1000)",
+        view: "@integer(60, 1000)",
+        article: "@cparagraph(10,20)",
+        "signature|+1": Texts,
+        "bgimg|1": [0, 1, 2, 3, 4, 5, 6],
+      },
+    ],
+  });
 
 const mockStatus = () => {
   const result = {
@@ -112,8 +128,4 @@ const mockLists = (params: any) => {
   });
 };
 
-export {
-  mockStatus,
-  mockLists,
-  PayWays,
-};
+export { mockStatus, mockLists, PayWays };
