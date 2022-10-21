@@ -5,6 +5,7 @@ specifiers:
   '@commitlint/config-conventional': ^15.0.0
   '@element-plus/icons-vue': ^2.0.6
   '@types/lodash': ^4.14.182
+  '@types/mockjs': ^1.0.7
   '@types/node': ^16.11.43
   '@types/nprogress': ^0.2.0
   '@typescript-eslint/eslint-plugin': ^5.30.5
@@ -23,6 +24,7 @@ specifiers:
   eslint-plugin-import: ^2.26.0
   eslint-plugin-vue: ^8.7.1
   husky: ^7.0.4
+  i: ^0.3.7
   lodash: ^4.17.21
   mockjs: ^1.1.0
   nprogress: ^0.2.0
@@ -61,6 +63,7 @@ dependencies:
 devDependencies:
   '@commitlint/cli': 15.0.0
   '@commitlint/config-conventional': 15.0.0
+  '@types/mockjs': 1.0.7
   '@types/node': 16.11.43
   '@typescript-eslint/eslint-plugin': 5.30.5_tqdvjhskp4iqqnzfei7kl2fvsq
   '@typescript-eslint/parser': 5.30.5_hxadhbs2xogijvk7vq4t2azzbu
@@ -72,6 +75,7 @@ devDependencies:
   eslint-plugin-import: 2.26.0_eufbkykj4pn23vgavsuagghc64
   eslint-plugin-vue: 8.7.1_eslint@7.32.0
   husky: 7.0.4
+  i: 0.3.7
   querystring: 0.2.1
   sass: 1.53.0
   typescript: 4.7.4
@@ -749,9 +753,8 @@ packages:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
     dev: true
 
-  /@types/mockjs/1.0.6:
-    resolution: {integrity: sha512-Yu5YlqbYZyqsd6LjO4e8ONJDN9pTSnciHDcRP4teNOh/au2b8helFhgRx+3w8xsTFEnwr9jtfTVJbAx+eYmlHA==}
-    dev: false
+  /@types/mockjs/1.0.7:
+    resolution: {integrity: sha512-OCxXz6hEaJOVpRwuJMiVY5a6LtJcih+br9gwB/Q8ooOBikvk5FpBQ31OlNimXo3EqKha1Z7PFBni+q9m+8NCWg==}
 
   /@types/node/16.11.43:
     resolution: {integrity: sha512-GqWykok+3uocgfAJM8imbozrqLnPyTrpFlrryURQlw1EesPUCx5XxTiucWDSFF9/NUEXDuD4bnvHm8xfVGWTpQ==}
@@ -2897,6 +2900,11 @@ packages:
     hasBin: true
     dev: true
 
+  /i/0.3.7:
+    resolution: {integrity: sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==}
+    engines: {node: '>=0.4'}
+    dev: true
+
   /i18next/20.6.1:
     resolution: {integrity: sha512-yCMYTMEJ9ihCwEQQ3phLo7I/Pwycf8uAx+sRHwwk5U9Aui/IZYgQRyMqXafQOw5QQ7DM1Z+WyEXWIqSuJHhG2A==}
     dependencies:
@@ -4497,7 +4505,7 @@ packages:
       vite: '>=2.0.0'
     dependencies:
       '@rollup/plugin-node-resolve': 13.3.0
-      '@types/mockjs': 1.0.6
+      '@types/mockjs': 1.0.7
       chalk: 4.1.2
       chokidar: 3.5.3
       connect: 3.7.0
