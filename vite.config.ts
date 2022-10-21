@@ -9,7 +9,7 @@ import OptimizationPersist from "vite-plugin-optimize-persist";
 import PkgConfig from "vite-plugin-package-config";
 
 export default defineConfig({
-  // base: "/moko-vue-elementplus-admin",
+  base: "/moko-vue-elementplus-admin",
   plugins: [
     vue(),
     vueJsx(),
@@ -29,7 +29,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: "@use \"@/styles/theme.scss\" as *;",
+        additionalData: '@use "@/styles/theme.scss" as *;',
       },
     },
   },
