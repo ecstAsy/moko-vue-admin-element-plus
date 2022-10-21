@@ -1,24 +1,15 @@
 <!--
  * @Author: ecstAsy
  * @Date: 2021-12-03 10:01:33
- * @LastEditTime: 2022-07-06 17:04:26
+ * @LastEditTime: 2022-10-21 17:37:18
  * @LastEditors: ecstAsy
 -->
 <template>
   <div class="moko-global-header">
     <!-- logo -->
     <div class="moko-global-header-logo">
-      <img
-        src="@/assets/logo.png"
-        class="moko-logo-img"
-        alt="logo"
-      >
-      <span
-        v-if="!isCollapse"
-        class="moko-logo-title"
-      >
-        Moko Pro
-      </span>
+      <img src="@/assets/logo.png" class="moko-logo-img" alt="logo" />
+      <span v-if="!isCollapse" class="moko-logo-title"> Moko Pro </span>
     </div>
     <!-- breadcrumb -->
     <div class="moko-global-header-breadcrumb">
@@ -37,14 +28,9 @@
     </div>
     <!-- action -->
     <div class="moko-global-header-content">
-      <el-space
-        wrap
-      >
+      <el-space wrap>
         <div class="content-item user">
-          <el-dropdown
-            class="dropdown"
-            placement="top"
-          >
+          <el-dropdown class="dropdown" placement="top">
             <div class="user-info">
               <el-avatar
                 size="small"

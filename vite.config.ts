@@ -9,7 +9,6 @@ import OptimizationPersist from "vite-plugin-optimize-persist";
 import PkgConfig from "vite-plugin-package-config";
 
 export default defineConfig({
-  base: "/moko-vue-elementplus-admin",
   plugins: [
     vue(),
     vueJsx(),

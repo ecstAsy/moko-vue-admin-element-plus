@@ -57,7 +57,7 @@ module.exports = {
       },
     ],
     semi: ["error", "always"],
-    quotes: ["error", "double"],
+    quotes: ["error", "single"],
     "no-console": "off",
     camelcase: "error",
     "comma-dangle": ["error", "always-multiline"],

@@ -17,12 +17,13 @@ Object.keys(Icons).forEach((icon) => {
 });
 
 app.directive("permission", {
-  beforeMount (el, binding, vnode) {
+  beforeMount(el, binding, vnode) {
     // @ts-ignore
     const { userInfo } = store.state.user;
     const { value } = binding;
     if (!value.length) return false;
-    const flag = (value.filter((v: string) => userInfo.authdata.includes(v))).length > 0;
+    const flag =
+      value.filter((v: string) => userInfo.authdata.includes(v)).length > 0;
     if (!flag) {
       const El = el;
       if (!el.parentNode) {
@@ -35,6 +36,4 @@ app.directive("permission", {
   },
 });
 
-app.use(router)
-  .use(store, key)
-  .mount("#app");
+app.use(router).use(store, key).mount("#app");
